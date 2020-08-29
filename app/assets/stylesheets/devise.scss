@@ -1,0 +1,57 @@
+.user-container {
+  text-align: center;
+}
+
+.field {
+  margin-top: 30px;
+}
+
+.entry-field {
+  width: 360px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid #A9A9A9;
+}
+
+.actions {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.page-title {
+  font-size: 40px;
+  color: black;
+  margin-bottom: 70px;
+}
+
+.entry-btn {
+  width: 360px;
+  height: 35px;
+  background-color: #3ECDC6;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid #A9A9A9;
+}
+
+.alert-success {
+  width: 400px;
+  margin: 0 auto;
+  border-radius: 3px;
+  margin: 50px auto;
+}
+
+#error_explanation {
+  background-color: #F2DEDD;
+  padding: 15px;
+  width: 500px;
+  margin: 0 auto;
+  border-radius: 6px;
+  color: red;
+  
+  li {
+    list-style: none;
+    margin-bottom: 10px;
+  }
+
+}
