@@ -19,8 +19,6 @@
 @media screen and (min-width: 992px) {
   .navbar {
     font-size: 0.8rem;
-  
-    width: 100%;
   }
 }
 
@@ -33,7 +31,7 @@
 
 @media screen and (min-width: 992px) {
   .navbar-brand {
-    margin-bottom: 38px;
+    margin: 0;
   }
 }
 
@@ -111,11 +109,6 @@
   }
 }
 
-.navbar-nav .nav-link {
-  padding-right: 0;
-  padding-left: 0;
-}
-
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
@@ -124,7 +117,9 @@
   &:hover {
     color: #fff;
     background-color: #cd5c5c;
-    padding: 10px;
+    padding: 0.5rem 1rem;
     border-radius: 10px;
+    text-decoration: underline;
+    text-decoration-color: white;
   }
 }
