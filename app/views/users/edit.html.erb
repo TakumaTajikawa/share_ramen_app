@@ -2,24 +2,29 @@
 <div class="user-container">
   <div>
     <%= form_for(@user) do |f| %>
-      
-   
-     <div class="user-name">
-      <%= @user.name %>
-     </div>
-      
-  
-    <p></p>
-    <div class = 'form-group'>
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control', id: 'user_name' %>
-    </div>
-    <div class = 'form-group'>
-      <%= f.label :email %>
-      <%= f.text_field :email, class: 'form-control', id: 'user_email' %>
-    </div>
+      <% if @user.image? %>
+        <%= image_tag @user.image.thumb.url, class: "user-icon" %>
+      <% else %>
+        <%= image_tag "default.jpg", alt: "user-icon", size: "200", class: "user-icon" %>
+      <% end %>
+      <button type="button" class="btn btn-outline-secondary rounded-pill">
+        <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "image-select-btn" %>
+      </button>
+      <div class="user-name">
+        <%= @user.name %>
+      </div>
     
-    <%= f.submit "更新する", class: "btn btn-primary" %>
+      <p></p>
+      <div class = 'form-group'>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control', id: 'user_name' %>
+      </div>
+      <div class = 'form-group'>
+        <%= f.label :email %>
+        <%= f.text_field :email, class: 'form-control', id: 'user_email' %>
+      </div>
+      
+      <%= f.submit "更新する", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

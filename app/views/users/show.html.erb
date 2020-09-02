@@ -1,7 +1,12 @@
 <% provide(:title, "マイページ") %>
 <div class="user-container">
   <h3 class="page-title">マイページ</h3>
-  <h4 class="show-user-name">
+  <% if @user.image? %>
+    <%= image_tag @user.image.thumb.url, class: "user-icon" %>
+  <% else %>
+    <%= image_tag "default.jpg", alt: "user-icon", size: "200", class: "user-icon" %>
+  <% end %>
+  <h4 class="user-name">
     <%= @user.name %>
   </h4>
   <% if current_user == @user %>
