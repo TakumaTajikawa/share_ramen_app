@@ -1,2 +1,25 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<% provide(:title, "プロフィール編集") %>
+<div class="user-container">
+  <div>
+    <%= form_for(@user) do |f| %>
+      
+   
+     <div class="user-name">
+      <%= @user.name %>
+     </div>
+      
+  
+    <p></p>
+    <div class = 'form-group'>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control', id: 'user_name' %>
+    </div>
+    <div class = 'form-group'>
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'form-control', id: 'user_email' %>
+    </div>
+    
+    <%= f.submit "更新する", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
