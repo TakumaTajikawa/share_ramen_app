@@ -27,6 +27,10 @@ gem 'devise-i18n'
 
 gem 'devise-bootstrap-views', '~> 1.0'
 
+gem 'carrierwave'
+
+gem 'rmagick'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

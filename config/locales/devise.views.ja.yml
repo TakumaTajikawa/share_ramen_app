@@ -26,8 +26,9 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+        introduction: 自己紹介
     models:
-      user: ユーザ
+      user: ユーザー
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
