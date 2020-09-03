@@ -53,6 +53,7 @@
   .navbar-expand-lg .navbar-toggler {
     display: none;
   }
+
   .nav-item {
     justify-content: flex-end;
     display: flex;
@@ -62,15 +63,30 @@
       background-color: #cd5c5c;
     }
   }
+
+  .fas {
+    color: #fff;
+    position: relative;
+    top: 12px;
+    left: 7px;
+    font-size: 18px;
+  }
 }
 
-.fas {
-  color: #fff;
-  position: relative;
-  top: 12px;
-  left: 7px;
-  font-size: 18px;
+@media screen and  (max-width: 991px) {
+  .fas {
+    color: #fff;
+    position: relative;
+    top: 33px;
+    font-size: 18px;
+  }
+
+  .nav-link {
+    position: relative;
+    left: 25px;
+  }
 }
+
 
 .navbar-toggler-icon {
   display: inline-block;
