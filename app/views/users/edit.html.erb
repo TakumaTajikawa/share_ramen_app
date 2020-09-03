@@ -1,5 +1,6 @@
 <% provide(:title, "プロフィール編集") %>
 <div class="user-container">
+  <h3 class="page-title">プロフィール編集</h3>
   <div>
     <%= form_for(@user) do |f| %>
       <% if @user.image? %>
@@ -10,9 +11,6 @@
       <button type="button" class="btn btn-outline-secondary rounded-pill">
         <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "image-select-btn" %>
       </button>
-      <div class="user-name">
-        <%= @user.name %>
-      </div>
       <div class = "form-group">
         <%= f.label :name %>
         <%= f.text_field :name, class: "form-control", id: "user_name", maxlength: "20"  %>

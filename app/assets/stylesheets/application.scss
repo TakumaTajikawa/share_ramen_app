@@ -19,10 +19,13 @@
 
 body {
   padding-top: 60px;
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
 }
 
 main {
   padding-top: 30px;
+  background-color: #cd5c5c;
+  color: #fff;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -42,11 +45,15 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #777;
+  color: #fff;
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
   text-align: center;
+}
+
+.notice {
+  width: 350px;
 }

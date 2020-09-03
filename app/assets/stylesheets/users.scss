@@ -2,6 +2,11 @@
   font-size: 30px;
 }
 
+.page-title {
+  color: #fff;
+  font-size: 2rem;
+}
+
 .account-edit {
   width: 230px;
   height: 35px;
@@ -10,7 +15,7 @@
   font-weight: bold;
   border-radius: 5px;
   border: 2px solid #F77402;
-  margin: 50px auto;
+  margin: 50px auto 0 auto;
 }
 
 @media screen and (min-width: 992px) {
@@ -26,6 +31,7 @@
   text-decoration: none;
   color: #fff;
   vertical-align: middle;
+  margin-top: 50px;
   &:hover {
     text-decoration: none;
     color: #fff;
@@ -34,6 +40,7 @@
 
 .form-group {
   display: block;
+  margin-top: 30px;
 }
 
 .form-control {
@@ -52,6 +59,8 @@
 .btn-outline-secondary {
   width: 200px;
   font-size: 7px;
+  border-color: #22110e;
+  background-color: #dcdcdc;
 }
 
 @media screen and (max-width: 991px) {
@@ -62,22 +71,32 @@
 
 .image-select-btn {
   width: 180px;
+  color: #22110e;
+}
+
+.user-container {
+  padding: 20px 0 95px 0;
 }
 
 .user-name {
-  width: 400px;
+  width: 350px;
   font-size: 25px;
-  margin: 30px auto 0 auto;
+  margin: 50px auto 0 auto;
 }
 
 .user-email {
-  width: 400px;
-  margin: 30px auto 0 auto;
+  width: 350px;
+  margin: 40px auto 0 auto;
 }
 
 .user-introduction {
-  width: 400px;
-  margin: 30px auto 0 auto;
+  width: 350px;
+  margin: 40px auto 0 auto;
+}
+
+.btn-primary {
+  margin-top: 30px;
+  width: 350px;
 }
 
 

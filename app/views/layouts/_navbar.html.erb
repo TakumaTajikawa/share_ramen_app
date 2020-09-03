@@ -8,19 +8,24 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item">
+            <i class="fas fa-user"></i>      
             <%= link_to "マイページ", user_path(current_user.id), class: "nav-link" %>
           </li>
           <li class="nav-item">
+            <i class="fas fa-sign-out-alt"></i>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
           </li>
         <% else %>
           <li class="nav-item">
+            <i class="fas fa-question-circle"></i>
             <%= link_to "シェアラーとは？", about_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
+            <i class="fas fa-sign-in-alt"></i>
             <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
+            <i class="fas fa-user-plus"></i>
             <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
           </li>
         <% end %>
