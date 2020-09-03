@@ -99,6 +99,34 @@
   width: 350px;
 }
 
+// users/index
+
+table {
+  width: 350px;
+  margin: 40px auto 30px auto;
+}
+
+tr {
+  margin-bottom: 20px;
+}
+
+.td-user-icon {
+  text-align: left;
+  width: 150px;
+}
+
+.td-user-name {
+  text-align: left;
+}
+
+.index-user-name {
+  color: #fff;
+  font-size: 1.3rem;
+  &:hover {
+    text-decoration: none;
+  }
+  text-decoration: none;
+}
 
 
 
