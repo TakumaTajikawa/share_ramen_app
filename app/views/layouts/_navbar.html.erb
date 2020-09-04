@@ -8,6 +8,10 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item">
+            <%= image_tag "ramen-icon.jpg", alt: "post-icon", size: "20", class: "fas post-icon" %>   
+            <%= link_to "投稿を作成", new_post_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
             <i class="fas fa-user"></i>      
             <%= link_to "マイページ", user_path(current_user.id), class: "nav-link" %>
           </li>
