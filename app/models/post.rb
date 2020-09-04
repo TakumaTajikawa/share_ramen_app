@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
   validates :store, presence: true, length: { maximum: 20 }
   validates :prefecture, presence: true
