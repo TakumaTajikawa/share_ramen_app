@@ -54,6 +54,15 @@ p {
   text-align: center;
 }
 
-.notice {
+.flash {
+  width: 350px;
+  margin: 30px auto 20px auto;
+}
+
+.flash > div {
+  width: 350px;
+}
+
+#error_explanation {
   width: 350px;
 }
