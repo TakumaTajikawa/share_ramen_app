@@ -27,8 +27,15 @@ ja:
         unlock_token: ロック解除用トークン
         updated_at: 更新日
         introduction: 自己紹介
+      post:
+        store: 店名
+        prefecture: 都道府県
+        genre: ジャンル
+        ramen: 品名
+        impression: 感想
     models:
       user: ユーザー
+      post: 投稿
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
@@ -340,4 +347,11 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
-  
+  post:
+    new:
+      store: 店名
+      prefecture: 都道府県
+      genre: ジャンル
+      ramen: 品名
+      impression: 感想
+
