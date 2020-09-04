@@ -26,7 +26,7 @@
       <%= f.submit "更新する", class: "btn btn-primary" %>
     <% end %>
     <div class="acount-destroy">
-      <%= link_to "アカウントを削除する", user_path(@user.id), method: :delete, class: "acount_destroy" %>
+      <%= link_to "アカウントを削除する", user_path(@user.id), method: :delete, data: {confirm: "本当にアカウントを削除しますか?", cancel: "やめる", commit: "削除する"}, title: "削除確認", class: "acount_destroy" %>
     </div>
   </div>
 </div>
