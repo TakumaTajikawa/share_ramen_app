@@ -20,13 +20,16 @@
 body {
   padding-top: 60px;
   font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
-  text-align: center;
 }
 
 main {
   padding-top: 30px;
   background-color: #cd5c5c;
   color: #fff;
+  width: 100%;
+}
+
+@media screen and (max-width: 991px) {
 }
 
 h1, h2, h3, h4, h5, h6 {
