@@ -1,9 +1,10 @@
 <% provide(:title, "新規投稿") %>
 <div class="post-container">
-  <h3 class="page-title">投稿を作成</h3>
+  <h3 class="page-title pt-post-new">投稿を作成
+    <hr>
+  </h3>
   <div>
     <%= form_for(@post) do |f| %>
-     
       <button type="button" class="btn btn-outline-secondary rounded-pill">
         <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "image-select-btn" %>
       </button>
@@ -11,7 +12,7 @@
         <%= f.label :store %>
         <%= f.text_field :store, class: "form-control", id: "store", maxlength: "20"  %>
       </div>
-      <div class="form-group">
+      <div class="form-group fg-prefecture">
         <%= f.label :prefecture %>
         <select name="pref_name">
           <option value="" selected>選択してください</option>
@@ -64,7 +65,7 @@
           <option value="沖縄県">沖縄県</option>
         </select>
       </div>
-      <div class="form-group">
+      <div class="form-group fg-genre">
         <%= f.label :genre %>
         <select name="genre">
           <option value="" selected>選択してください</option>
@@ -78,7 +79,7 @@
           <option value="油そば">油そば</option>
         </select>
       </div>
-      <div class="form-group">
+      <div class="form-group fg-ramen">
         <%= f.label :ramen %>
         <%= f.text_field :ramen, class: "form-control", id: "ramen", maxlength: "20"  %>
       </div>
@@ -86,7 +87,7 @@
         <%= f.label :impression %>
         <%= f.text_field :impression, class: "form-control", id: "impression", maxlength: "200"  %>
       </div>
-      <%= f.submit "投稿する", class: "btn btn-primary" %>
+      <%= f.submit "投稿", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
