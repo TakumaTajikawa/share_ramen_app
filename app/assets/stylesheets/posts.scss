@@ -1,0 +1,137 @@
+// posts/new
+#container {
+  text-align: center;
+}
+
+.post-container {
+  margin: 0 0 30px 0;
+  background-color: #fff;
+  width: 500px;
+  border: 1px solid black;
+  box-shadow: 0 0 8px black;
+  color: black;
+  border-radius: 10px;
+  text-align: center;
+  display: inline-block;
+}
+
+#post_error_explanation > ul {
+  padding-left: 0;
+}
+
+.page-title-post-new {
+  background-color: #fff;
+  color: black !important;
+  height: 60px;
+  text-align: center;
+  font-size: 20px !important;
+  line-height: 60px;
+  font-weight: 700px !important;
+  border-radius: 8px 8px 0 0;
+  font-weight: bold;
+  margin-bottom: 20px !important;
+}
+
+.page-title-post-new > hr {
+  width: 470px;
+  margin: 0 auto 0 auto !important;
+}
+
+.label-1 {
+  display: block;
+  position: relative;
+  right: 150px;
+}
+
+.post-container select {
+  height: 40px;
+  border-color: #CED4D9;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.fg-genre, .fg-prefecture {
+  position: relative;
+  right: 100px;
+  > .label {
+    display: block;
+    padding-right: 70px;
+  }
+}
+
+.label-2, .field_with_errors > .label-2 {
+  display: block;
+  padding-right: 70px;
+}
+
+#impression {
+  height: 100px;
+}
+
+#image-select-btn {
+  position: relative;
+  right: 23px;
+}
+
+.post-container .btn-primary {
+  margin: 40px auto;
+  text-align: center;
+}
+
+#post_error_explanation {
+  background-color: #fff !important;
+  padding: 0;
+  margin-bottom: 0;
+  border: none;
+}
+
+#post_error_explanation li {
+  list-style: none;
+  color: red;
+  font-weight: bold;
+}
+
+
+@media screen and (max-width: 991px) {
+
+  .post-container {
+    width: 335px;
+    margin: 0 auto 30px auto;
+  }
+
+  .page-title-post-new > hr {
+    width: 320px;
+    margin: 0 auto 0 auto !important;
+  }
+
+  .post-container .form-control {
+    width: 300px;
+  }
+  
+  .post-container .label-1 {
+    position: relative;
+    right: 130px;
+  }
+
+  .post-container select {
+    position: relative;
+    left: 24px;
+  }
+
+  .label-2 {
+   position: relative;
+   left: 20px;
+  }
+
+  #image-select-btn {
+    position: relative;
+    left: 3px;
+  }
+
+  .post-container .btn-primary {
+    width: 300px;
+    margin-top: 30px;
+  }
+
+}
+

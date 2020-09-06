@@ -1,0 +1,12 @@
+<h1>Posts#index</h1>
+<div>
+  <% @posts.each do |post| %>
+    <h4>
+      <%= post.store %>
+      <%= post.genre %>
+      <%= post.prefecture %>
+    </h4>
+  <% end %>
+</div>
+<p>Find me in app/views/posts/index.html.erb</p>
+
