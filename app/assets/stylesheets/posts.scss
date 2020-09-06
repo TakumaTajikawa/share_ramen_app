@@ -68,6 +68,11 @@
   height: 100px;
 }
 
+#image-select-btn {
+  position: relative;
+  right: 23px;
+}
+
 .post-container .btn-primary {
   margin: 40px auto;
   text-align: center;
@@ -116,6 +121,11 @@
   .label-2 {
    position: relative;
    left: 20px;
+  }
+
+  #image-select-btn {
+    position: relative;
+    left: 3px;
   }
 
   .post-container .btn-primary {
