@@ -33,6 +33,7 @@ ja:
         genre: ジャンル
         ramen: 品名
         impression: 感想
+        image: 写真
     models:
       user: ユーザー
       post: 投稿

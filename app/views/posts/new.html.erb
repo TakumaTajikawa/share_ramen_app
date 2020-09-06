@@ -7,6 +7,15 @@
       <hr>
     </h3>
     <%= form_for(@post) do |f| %>
+      <% if @post.errors.any? %>
+        <div id="post_error_explanation" class="alert alert-danger">
+          <ul>
+            <% @post.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
       <div class="form-group">
         <% if @post.image? %>
           <%= image_tag @post.image.thumb.url, alt: "post-image", id: "img_prev", size: "100" %>
