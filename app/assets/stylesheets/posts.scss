@@ -15,6 +15,10 @@
   display: inline-block;
 }
 
+#post_error_explanation > ul {
+  padding-left: 0;
+}
+
 .page-title-post-new {
   background-color: #fff;
   color: black !important;
@@ -33,37 +37,31 @@
   margin: 0 auto 0 auto !important;
 }
 
-.post-container label {
+.label-1 {
+  display: block;
   position: relative;
   right: 150px;
 }
 
 .post-container select {
-  position: relative;
-  top: 35px;
-  right: 134px;
   height: 40px;
   border-color: #CED4D9;
   border-radius: 5px;
   background-color: #fff;
 }
 
-.fg-prefecture > label {
+.fg-genre, .fg-prefecture {
   position: relative;
-  right: 60px;
+  right: 100px;
+  > .label {
+    display: block;
+    padding-right: 70px;
+  }
 }
 
-.fg-genre {
-  margin-top: 60px !important;
-}
-
-.fg-genre > label {
-  position: relative;
-  right: 60px;
-}
-
-.fg-ramen {
-  margin-top: 70px !important;
+.label-2, .field_with_errors > .label-2 {
+  display: block;
+  padding-right: 70px;
 }
 
 #impression {
@@ -89,7 +87,6 @@
 }
 
 
-
 @media screen and (max-width: 991px) {
 
   .post-container {
@@ -106,19 +103,19 @@
     width: 300px;
   }
   
-  .post-container label {
+  .post-container .label-1 {
     position: relative;
     right: 130px;
   }
 
   .post-container select {
     position: relative;
-    right: 110px;
+    left: 24px;
   }
 
-  .fg-prefecture > label, .fg-genre > label {
-    position: relative;
-    right: 38px;
+  .label-2 {
+   position: relative;
+   left: 20px;
   }
 
   .post-container .btn-primary {

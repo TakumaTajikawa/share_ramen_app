@@ -25,23 +25,23 @@
         <%= f.file_field :image, accept: 'image/jpeg, image/gif, image/png', id: "image-select-btn" %>
       </div>
       <div class="form-group">
-        <%= f.label :store %>
+        <%= f.label :store, class: "label-1" %>
         <%= f.text_field :store, class: "form-control", id: "store", maxlength: "20"  %>
       </div>
       <div class="form-group fg-prefecture">
-        <%= f.label :prefecture %>
+        <%= f.label :prefecture, class: "label-2" %>
         <%= f.select :prefecture, Post.prefectures.keys, include_blank: "選択してください" %>
       </div>
       <div class="form-group fg-genre">
-        <%= f.label :genre %>
+        <%= f.label :genre, class: "label-2"%>
         <%= f.select :genre, Post.genres.keys, include_blank: "選択してください" %>
       </div>
       <div class="form-group fg-ramen">
-        <%= f.label :ramen %>
+        <%= f.label :ramen, class: "label-1" %>
         <%= f.text_field :ramen, class: "form-control", id: "ramen", maxlength: "20"  %>
       </div>
       <div class="form-group">
-        <%= f.label :impression %>
+        <%= f.label :impression, class: "label-1" %>
         <%= f.text_area :impression, class: "form-control", id: "impression", maxlength: "200" %>
       </div>
       <%= f.submit "投稿", class: "btn btn-primary", data: {disable_with: "送信中..."} %>
