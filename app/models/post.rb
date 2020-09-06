@@ -2,9 +2,9 @@ class Post < ApplicationRecord
   belongs_to :user
   default_scope -> { order(created_at: :desc) }
   validates :store, presence: true, length: { maximum: 20 }
-  validates :prefecture, presence: true
-  validates :genre, presence: true
-  validates :image, presence: true
+  validates :prefecture, presence: { message: 'を選択してください。' }
+  validates :genre, presence: { message: 'を選択してください。' }
+  validates :image, presence: { message: 'をアップロードしてください。' }
   mount_uploader :image, ImageUploader
 
   enum prefecture: {
