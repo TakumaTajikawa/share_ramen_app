@@ -4,7 +4,7 @@
     <h3 class="page-title">マイページ</h3>
   <% end %>
   <% if @user.image? %>
-    <%= image_tag @user.image.thumb.url, class: "user-icon" %>
+    <%= image_tag @user.image.thumb.url, size: "200", class: "user-icon" %>
   <% else %>
     <%= image_tag "default.jpg", alt: "user-icon", size: "200", class: "user-icon" %>
   <% end %>

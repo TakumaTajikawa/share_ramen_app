@@ -91,8 +91,31 @@
   font-weight: bold;
 }
 
+// posts/index
+
+.ramen-posts-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 900px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.ramen-post-container {
+  background-color: #fff;
+  width: 270px;
+  height: 310px;
+  margin-top: 40px;
+}
+
+.image-container {
+  padding: 10px 0 0 10px;
+}
+
 
 @media screen and (max-width: 991px) {
+
+  // posts/new
 
   .post-container {
     width: 335px;
@@ -126,12 +149,15 @@
   #image-select-btn {
     position: relative;
     left: 3px;
+    display: block;
   }
 
   .post-container .btn-primary {
     width: 300px;
     margin-top: 30px;
   }
+
+  // posts/index
 
 }
 
