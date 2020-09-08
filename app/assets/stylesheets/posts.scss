@@ -170,5 +170,20 @@
 
   // posts/index
 
+  .ramen-posts-container {
+    width: 375px;
+    padding-bottom: 70px;
+  }
+
+  .ramen-post-container {
+    margin: 20px auto;
+    width: 320px;
+    height: 370px;
+  }
+
+  .image-container > img {
+    width: 300px;
+    height: 300px;
+  }
 }
 
