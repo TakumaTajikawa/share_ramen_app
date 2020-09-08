@@ -107,6 +107,9 @@
   width: 270px;
   height: 350px;
   margin-top: 40px;
+  border: 1px solid black;
+  box-shadow: 0 0 8px black;
+  border-radius: 5px;
   > a {
     &:hover {
       text-decoration: none;
