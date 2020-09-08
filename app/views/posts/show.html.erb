@@ -28,11 +28,10 @@
         <div class="ramen-container">
           品名：<%= @post.ramen %>
         </div>
-        <% if @post.impression? %>
-          <div class="impression-container">
-            感想：<%= @post.impression %>
-          </div>
-        <% end %>
+        <hr class="between-r-i">
+        <div class="impression-container">
+          <%= @post.impression %>
+        </div>
       </div>
     </div>
   </div>

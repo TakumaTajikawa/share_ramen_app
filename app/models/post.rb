@@ -4,6 +4,8 @@ class Post < ApplicationRecord
   validates :store, presence: true, length: { maximum: 20 }
   validates :prefecture, presence: { message: 'を選択してください。' }
   validates :genre, presence: { message: 'を選択してください。' }
+  validates :ramen, presence: true
+  validates :impression, presence: true
   validates :image, presence: { message: 'をアップロードしてください。' }
   mount_uploader :image, ImageUploader
 
