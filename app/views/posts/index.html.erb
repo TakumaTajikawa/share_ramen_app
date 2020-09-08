@@ -2,6 +2,16 @@
   <div class="ramen-posts-container">
     <% @posts.each do |post| %>
       <div class="ramen-post-container">
+        <%= link_to user_path(post.user) do %>
+          <% if post.user.image? %>
+            <%= image_tag post.user.image.thumb.url, size: "30", class: "user-icon" %>
+          <% else %>
+            <%= image_tag "default.jpg", alt: "user-icon", size: "30", class: "user-icon" %>
+          <% end %>
+          <div class="post-user-name-container">
+            <%= post.user.name %>
+          </div>
+        <% end %>
         <%= link_to post_path(post) do %>
           <div class="image-container">
             <%= image_tag post.image.thumb.url, alt: "post-image", size: "250" %>

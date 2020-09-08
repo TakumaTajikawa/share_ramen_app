@@ -105,12 +105,22 @@
 .ramen-post-container {
   background-color: #fff;
   width: 270px;
-  height: 310px;
+  height: 350px;
   margin-top: 40px;
   > a {
     &:hover {
       text-decoration: none;
     }
+  }
+  .user-icon {
+    margin: 10px 0 0 10px;
+  }
+  .post-user-name-container {
+    display: inline;
+    margin-left: 5px;
+    position: relative;
+    top: 7px;
+    color: black;
   }
 }
 
@@ -178,7 +188,7 @@
   .ramen-post-container {
     margin: 20px auto;
     width: 320px;
-    height: 370px;
+    height: 400px;
   }
 
   .image-container > img {
