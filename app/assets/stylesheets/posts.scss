@@ -253,8 +253,7 @@
   }
 
   #image-select-btn {
-    position: relative;
-    left: 3px;
+    padding-left: 40px;
     display: block;
   }
 
@@ -279,6 +278,63 @@
   .image-container > img {
     width: 300px;
     height: 300px;
+  }
+
+  // posts/show
+  #container {
+    height: auto;
+  }
+
+  .ramen-post-show-container {
+    display: block;
+    padding-bottom: 0;
+    height: 780px;
+    
+
+    .ramen-post-show-container-1 {
+      border: none;
+      width: 350px;
+      height: 350px;
+      box-shadow: none;
+      margin: auto;
+      text-align-last: center;
+      position: relative;
+      top: 80px;
+      z-index: 2;
+    }
+
+    .ramen-post-show-container-2 {
+      margin: auto;
+      height: auto;
+      position: relative;
+      bottom: 450px;
+      border: 1px solid black;
+      box-shadow: 0 0 8px black;
+      z-index: 1;
+
+      .details-container {
+        position: relative;
+        top: 1px;
+        z-index: 1;
+
+        .prefecture-container {
+          padding-bottom: 330px;
+          padding-top: 0;
+        }
+
+        .genre-container {
+          padding: 5px 20px;
+        }
+
+        .ramen-container {
+          padding: 5px 20px;
+        }
+
+        .between-r-i {
+          margin-top: 10px;
+        }
+      }
+    }
   }
 }
 
