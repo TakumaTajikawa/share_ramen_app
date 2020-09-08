@@ -1,12 +1,30 @@
-<h1>Posts#index</h1>
-<div>
-  <% @posts.each do |post| %>
-    <h4>
-      <%= post.store %>
-      <%= post.genre %>
-      <%= post.prefecture %>
-    </h4>
-  <% end %>
+<div id="containr">
+  <div class="ramen-posts-container">
+    <% @posts.each do |post| %>
+      <div class="ramen-post-container">
+        <%= link_to user_path(post.user) do %>
+          <% if post.user.image? %>
+            <%= image_tag post.user.image.thumb.url, size: "30", class: "user-icon" %>
+          <% else %>
+            <%= image_tag "default.jpg", alt: "user-icon", size: "30", class: "user-icon" %>
+          <% end %>
+          <div class="post-user-name-container">
+            <%= post.user.name %>
+          </div>
+        <% end %>
+        <%= link_to post_path(post) do %>
+          <div class="image-container">
+            <%= image_tag post.image.thumb.url, alt: "post-image", size: "250" %>
+          </div>
+          <div class="store-container">
+            <%= post.store %>
+          </div>
+          <div class="prefecture-container">
+            <%= post.prefecture %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
-<p>Find me in app/views/posts/index.html.erb</p>
 
