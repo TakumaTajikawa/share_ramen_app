@@ -1,2 +1,39 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div id="containr">
+  <div class="ramen-post-show-container">
+    <div class="image-container ramen-post-show-container-1">
+      <%= image_tag @post.image.thumb.url, alt: "post-image", size: "500" %>
+    </div>
+    <div class="ramen-post-show-container-2">
+      <%= link_to user_path(@post.user) do %>
+        <% if @post.user.image? %>
+          <%= image_tag @post.user.image.thumb.url, size: "30", class: "user-icon" %>
+        <% else %>
+          <%= image_tag "default.jpg", alt: "user-icon", size: "30", class: "user-icon" %>
+        <% end %>
+        <div class="post-user-name-container">
+          <%= @post.user.name %>
+        </div>
+      <% end %>
+      <hr>
+      <div class="details-container">
+        <div class="store-container">
+          <%= @post.store %>
+        </div>
+        <div class="prefecture-container">
+          都道府県：<%= @post.prefecture %>
+        </div>
+        <div class="genre-container">
+          ジャンル：<%= @post.genre %>
+        </div>
+        <div class="ramen-container">
+          品名：<%= @post.ramen %>
+        </div>
+        <% if @post.impression? %>
+          <div class="impression-container">
+            感想：<%= @post.impression %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
