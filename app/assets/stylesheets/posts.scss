@@ -73,6 +73,10 @@
   right: 23px;
 }
 
+.post-image-prev {
+  margin-top: 30px;
+}
+
 .post-container .btn-primary {
   margin: 40px auto;
   text-align: center;
@@ -99,13 +103,13 @@
   width: 900px;
   margin: 0 auto;
   justify-content: space-between;
-  padding-bottom: 70px;
+  padding-bottom: 20px;
 }
 
 .ramen-post-container {
   background-color: #fff;
   width: 270px;
-  height: 350px;
+  height: 365px;
   margin-top: 40px;
   border: 1px solid black;
   box-shadow: 0 0 8px black;
@@ -115,6 +119,7 @@
       text-decoration: none;
     }
   }
+
   .user-icon {
     margin: 10px 0 0 10px;
   }
@@ -134,6 +139,87 @@
 .store-container, .prefecture-container {
   color: black;
   padding-left: 10px;
+}
+
+// posts/show
+
+.ramen-post-show-container {
+  display: flex;
+  justify-content: center;
+  padding: 70px 0;
+
+  .ramen-post-show-container-1 {
+    height: 502px;
+    padding: 0;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    box-shadow: -1px 0 8px black;
+  }
+
+  .ramen-post-show-container-2 {
+    background-color: #fff;
+    height: 502px;
+    width: 350px;
+    color: black;
+    padding-top: 13px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 0 3px 3px 0;
+    box-shadow: 1px 0 8px black;
+    > a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .user-icon {
+      margin: 10px 0 0 10px;
+    }
+
+    .post-user-name-container {
+      display: inline;
+      position: relative;
+      top: 7px;
+      padding: 0 10px;
+      color: black;
+    }
+
+    hr {
+      margin-top: 19px;
+    }
+
+    .details-container {
+
+      .store-container {
+        padding: 0 20px 10px 20px;
+        font-size: 25px;
+        font-weight: bold;
+      }
+
+      .prefecture-container {
+        padding: 10px 20px;
+      }
+
+      .genre-container {
+        padding: 10px 20px;
+      }
+
+      .ramen-container {
+        padding: 10px 20px;
+      }
+
+      .between-r-i {
+        margin-bottom: 0;
+      }
+
+      .impression-container {
+        padding: 10px 20px;
+      }
+    }
+  }
+
 }
 
 
@@ -171,8 +257,7 @@
   }
 
   #image-select-btn {
-    position: relative;
-    left: 3px;
+    padding-left: 40px;
     display: block;
   }
 
@@ -197,6 +282,64 @@
   .image-container > img {
     width: 300px;
     height: 300px;
+  }
+
+  // posts/show
+  #container {
+    height: auto;
+  }
+
+  .ramen-post-show-container {
+    display: block;
+    padding: 0;
+    height: 780px;
+    
+
+    .ramen-post-show-container-1 {
+      border: none;
+      width: 350px;
+      height: 350px;
+      box-shadow: none;
+      margin: auto;
+      text-align-last: center;
+      position: relative;
+      top: 150px;
+      z-index: 2;
+
+    }
+
+    .ramen-post-show-container-2 {
+      margin: 70px auto 0 auto;
+      height: auto;
+      position: relative;
+      bottom: 450px;
+      border: 1px solid black;
+      box-shadow: 0 0 8px black;
+      z-index: 1;
+
+      .details-container {
+        position: relative;
+        top: 1px;
+        z-index: 1;
+
+        .prefecture-container {
+          padding-bottom: 330px;
+          padding-top: 0;
+        }
+
+        .genre-container {
+          padding: 5px 20px;
+        }
+
+        .ramen-container {
+          padding: 5px 20px;
+        }
+
+        .between-r-i {
+          margin-top: 10px;
+        }
+      }
+    }
   }
 }
 

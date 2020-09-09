@@ -1,5 +1,5 @@
 <% provide(:title, "新規投稿") %>
-<%= javascript_include_tag "/posts.js" %>
+<%= javascript_pack_tag "posts.js" %>
 
 <div id="container">
   <div class="post-container">
@@ -34,11 +34,18 @@
       </div>
       <div class="form-group">
         <%= f.label :impression, class: "label-1" %>
-        <%= f.text_area :impression, class: "form-control", id: "impression", maxlength: "200" %>
+        <%= f.text_area :impression, class: "form-control", id: "impression", maxlength: "150" %>
       </div>
       <div class="form-group">
         <%= f.label :image, class: "label-1" %>
         <%= f.file_field :image, accept: 'image/jpeg, image/gif, image/png', id: "image-select-btn" %>
+      </div>
+      <div class="post-image-prev">
+        <% if @post.image? %>
+          <%= image_tag @post.image.thumb.url, alt: "post-image", id: "img_prev", size: "150" %>
+        <% else %>
+          <%= image_tag "post-default.png", alt: "post-image", id: :img_prev, size: "150" %>
+        <% end %>
       </div>
       <%= f.submit "投稿", class: "btn btn-primary", data: {disable_with: "送信中..."} %>
     <% end %>
