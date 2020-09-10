@@ -30,7 +30,6 @@
 // users/edit
 
 .page-title-users {
-  
   color: black !important;
   height: 60px;
   font-size: 20px !important;
@@ -108,7 +107,7 @@
   }
 }
 
-.image-select-btn {
+#user-image-select-btn {
   width: 180px;
   color: #22110e;
 }
@@ -148,7 +147,7 @@
 }
 
 .acount-destroy {
-  margin: 40px 0;
+  margin: 40px 0 0 0;
   > a {
     color: #8e8e8e;
     &:hover {
