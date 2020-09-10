@@ -49,6 +49,8 @@
       </div>
       <%= f.submit "完了", class: "btn btn-primary", data: {disable_with: "送信中..."} %>
     <% end %>
-    
+    <div class="post-destroy">
+      <%= link_to "投稿を削除する", post_path(@post), method: :delete, data: {confirm: "本当に投稿を削除しますか?", cancel: "やめる", commit: "削除する"}, title: "削除確認", class: "post_destroy" %>
+    </div>
   </div>
 </div>

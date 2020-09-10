@@ -235,7 +235,14 @@
   }
 }
 
+// posts/edit
 
+.post-destroy {
+  padding-bottom: 40px;
+  > a {
+    color: #8e8e8e;
+  }
+}
 
 
 @media screen and (max-width: 991px) {
