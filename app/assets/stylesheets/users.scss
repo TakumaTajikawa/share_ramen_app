@@ -160,26 +160,24 @@
 // users/index
 
 table {
-  width: 350px;
+  width: 498px;
   margin: 40px auto 30px auto;
-}
-
-tr {
-  margin-bottom: 20px;
-}
-
-.td-user-icon {
-  text-align: left;
-  width: 100px;
+  tr {
+    height: 80px;
+    width: 498px;
+    &:hover {
+      background-color: #e8e8e8;
+    }
+  }
 }
 
 .td-user-name {
-  text-align: left;
+  width: 300px;
 }
 
 .index-user-name {
-  color: #fff;
-  font-size: 1.3rem;
+  color: black;
+  font-size: 20px;
   &:hover {
     text-decoration: none;
   }
