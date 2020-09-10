@@ -1,21 +1,30 @@
+<% provide(:title, "投稿詳細") %>
+
 <div id="containr">
   <div class="ramen-post-show-container">
     <div class="image-container ramen-post-show-container-1">
       <%= image_tag @post.image.thumb.url, alt: "post-image", size: "500" %>
     </div>
     <div class="ramen-post-show-container-2">
-      <%= link_to user_path(@post.user) do %>
-        <% if @post.user.image? %>
-          <%= image_tag @post.user.image.thumb.url, size: "30", class: "user-icon" %>
-        <% else %>
-          <%= image_tag "default.jpg", alt: "user-icon", size: "30", class: "user-icon" %>
+      <div class="ramen-post-show-container-2-upper">
+        <%= link_to user_path(@post.user) do %>
+          <% if @post.user.image? %>
+            <%= image_tag @post.user.image.thumb.url, size: "30", class: "user-icon" %>
+          <% else %>
+            <%= image_tag "default.jpg", alt: "user-icon", size: "30", class: "user-icon" %>
+          <% end %>
+          <div class="post-user-name-container">
+            <%= @post.user.name %>
+          </div>
         <% end %>
-        <div class="post-user-name-container">
-          <%= @post.user.name %>
-        </div>
-      <% end %>
+        <% if current_user.id == @post.user_id %>
+          <div class="post-edit-link">
+            <%= link_to "投稿を編集する", edit_post_path(@post) %>
+          </div>
+        <% end %>
+      </div>
       <hr>
-      <div class="details-container">
+      <div class="ramen-post-show-container-2-lower">
         <div class="store-container">
           <%= @post.store %>
         </div>
