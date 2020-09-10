@@ -184,6 +184,20 @@ table {
   text-decoration: none;
 }
 
+@media screen and (max-width: 991px) {
+  .user-container {
+    table {
+      width: 333px;
+      .td-user-name {
+        width: 220px;
+        > .index-user-name {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
 // users/show
 .user-introduction {
   border: 1px solid #e5e5e5;

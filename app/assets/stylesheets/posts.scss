@@ -182,9 +182,11 @@
         position: relative;
         top: 6px;
         left: 60px;
-        
         > a {
           color: #8e8e8e;
+          &:hover {
+            color: #007bff;
+          }
         }
       }
     }
