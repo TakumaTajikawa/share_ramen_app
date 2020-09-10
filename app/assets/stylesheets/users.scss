@@ -6,24 +6,17 @@
   font-size: 2rem;
 }
 
-.account-edit {
-  width: 230px;
-  height: 35px;
-  background-color: #FD9534;
-  font-weight: bold;
-  border-radius: 5px;
-  border: 2px solid #F77402;
+.acount-edit {
   margin: 50px auto 0 auto;
-}
-
-@media screen and (min-width: 992px) {
-  .account-edit {
-    background-color: #FDAA62;
+  > a {
+    color: #8e8e8e;
     &:hover {
-      background-color: #FD9534;
+      color: #007bff;
+      text-decoration: underline;
     }
   }
 }
+
 
 .user-edit-btn {
   text-decoration: none;
@@ -78,8 +71,29 @@
 }
 
 @media screen and (max-width: 991px) {
+  .main-users {
+    padding: 2px 0 20px 0;
+  }
   .btn-outline-secondary {
     margin-top: 30px;
+  }
+  .user-container {
+    width: 335px !important;
+    margin: 0!important;
+    hr {
+      width: 310px;
+    }
+    .user-name {
+      width: 300px;
+    }
+    .user-email {
+      width: 300px;
+    }
+
+    .user-introduction {
+      width: 300px;
+    }
+    
   }
 }
 
@@ -90,6 +104,7 @@
 
 .user-container {
   margin: 0 0 30px 0;
+  padding-bottom: 40px;
   background-color: #fff;
   width: 500px;
   border: 1px solid black;
@@ -132,9 +147,6 @@
 }
 
 
-
-
-
 // users/index
 
 table {
@@ -164,6 +176,9 @@ tr {
   text-decoration: none;
 }
 
-
-
-  
+// users/show
+.user-introduction {
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  padding: 20px
+}

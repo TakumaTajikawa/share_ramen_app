@@ -6,7 +6,10 @@
       <h3 class="page-title page-title-users">マイページ
         <hr>
       </h3>
-      
+    <% else %>
+      <h3 class="page-title page-title-users">プロフィール
+        <hr>
+      </h3>
     <% end %>
     <% if @user.image? %>
       <%= image_tag @user.image.thumb.url, size: "200", class: "user-icon" %>
@@ -18,14 +21,14 @@
     </div>
     <% if current_user == @user %>
       <div class="user-email">
-        <%= @user.email %>
+        E-mail：<%= @user.email %>
       </div>
     <% end %>
     <div class="user-introduction">
       <%= @user.introduction %>
     </div>
     <% if current_user == @user %>
-      <div class="account-edit">
+      <div class="acount-edit">
         <%= link_to "プロフィールを編集する", edit_user_path(@user), class: "user-edit-btn" %>
       </div>
     <% end %>
