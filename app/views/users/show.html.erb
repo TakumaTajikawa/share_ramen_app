@@ -1,27 +1,33 @@
 <% provide(:title, "マイページ") %>
-<div class="user-container">
-  <% if current_user == @user %>
-    <h3 class="page-title">マイページ</h3>
-  <% end %>
-  <% if @user.image? %>
-    <%= image_tag @user.image.thumb.url, size: "200", class: "user-icon" %>
-  <% else %>
-    <%= image_tag "default.jpg", alt: "user-icon", size: "200", class: "user-icon" %>
-  <% end %>
-  <div class="user-name">
-    <%= @user.name %>
-  </div>
-  <% if current_user == @user %>
-    <div class="user-email">
-      <%= @user.email %>
+
+<div id="container">
+  <div class="user-container">
+    <% if current_user == @user %>
+      <h3 class="page-title page-title-users">マイページ
+        <hr>
+      </h3>
+      
+    <% end %>
+    <% if @user.image? %>
+      <%= image_tag @user.image.thumb.url, size: "200", class: "user-icon" %>
+    <% else %>
+      <%= image_tag "default.jpg", alt: "user-icon", size: "200", class: "user-icon" %>
+    <% end %>
+    <div class="user-name">
+      <%= @user.name %>
     </div>
-  <% end %>
-  <div class="user-introduction">
-    <%= @user.introduction %>
-  </div>
-  <% if current_user == @user %>
-    <div class="account-edit">
-      <%= link_to "プロフィールを編集する", edit_user_path(@user), class: "user-edit-btn" %>
+    <% if current_user == @user %>
+      <div class="user-email">
+        <%= @user.email %>
+      </div>
+    <% end %>
+    <div class="user-introduction">
+      <%= @user.introduction %>
     </div>
-  <% end %>
+    <% if current_user == @user %>
+      <div class="account-edit">
+        <%= link_to "プロフィールを編集する", edit_user_path(@user), class: "user-edit-btn" %>
+      </div>
+    <% end %>
+  </div>
 </div>

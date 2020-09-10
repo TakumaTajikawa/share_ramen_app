@@ -3,7 +3,6 @@
 }
 
 .page-title {
-  color: #fff;
   font-size: 2rem;
 }
 
@@ -11,7 +10,6 @@
   width: 230px;
   height: 35px;
   background-color: #FD9534;
-  color: #fff;
   font-weight: bold;
   border-radius: 5px;
   border: 2px solid #F77402;
@@ -29,16 +27,30 @@
 
 .user-edit-btn {
   text-decoration: none;
-  color: #fff;
   vertical-align: middle;
   margin-top: 50px;
   &:hover {
     text-decoration: none;
-    color: #fff;
   }
 }
 
 // users/edit
+
+.page-title-users {
+  
+  color: black !important;
+  height: 60px;
+  font-size: 20px !important;
+  line-height: 60px;
+  font-weight: 700px !important;
+  border-radius: 8px 8px 0 0;
+  font-weight: bold;
+  margin-bottom: 40px !important;
+  > hr {
+    width: 470px;
+    margin: 0 auto 0 auto !important;
+  }
+}
 
 .form-group {
   display: block;
@@ -77,7 +89,15 @@
 }
 
 .user-container {
-  padding: 20px 0;
+  margin: 0 0 30px 0;
+  background-color: #fff;
+  width: 500px;
+  border: 1px solid black;
+  box-shadow: 0 0 8px black;
+  color: black;
+  border-radius: 10px;
+  text-align: center;
+  display: inline-block;
 }
 
 .user-name {
@@ -102,12 +122,16 @@
 }
 
 .acount-destroy {
-  margin-top: 50px;
+  margin: 40px 0;
+  > a {
+    color: #8e8e8e;
+    &:hover {
+      color: #007bff;
+    }
+  }
 }
 
-.acount_destroy {
-  color: #005f9e;
-}
+
 
 
 
