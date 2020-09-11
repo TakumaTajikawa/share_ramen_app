@@ -178,12 +178,15 @@
       }
       .post-edit-link {
         font-size: 12px;
-        display: inline;
+        display: inline-block;
         position: relative;
         top: 6px;
-        padding-left: 90px;
+        left: 60px;
         > a {
           color: #8e8e8e;
+          &:hover {
+            color: #007bff;
+          }
         }
       }
     }

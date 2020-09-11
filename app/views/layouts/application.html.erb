@@ -12,7 +12,7 @@
   </head>
   <body>
     <%= render "layouts/navbar"%>
-    <main>
+    <main class="main-users main-posts">
       <div class="flash">
         <%= flash_message(flash[:success], :success) if flash[:success] %>
         <%= flash_message(flash[:error], :danger) if flash[:error] %>

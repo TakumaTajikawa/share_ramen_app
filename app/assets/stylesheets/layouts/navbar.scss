@@ -75,6 +75,12 @@
 }
 
 @media screen and  (max-width: 991px) {
+  header {
+    width: 375px;
+  }
+  .navbar {
+    width: 375px;
+  }
   .fas {
     color: #fff;
     position: relative;

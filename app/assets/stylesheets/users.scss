@@ -1,44 +1,65 @@
+// users/show
+
 .show-user-name {
   font-size: 30px;
 }
 
 .page-title {
-  color: #fff;
   font-size: 2rem;
 }
 
-.account-edit {
-  width: 230px;
-  height: 35px;
-  background-color: #FD9534;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 5px;
-  border: 2px solid #F77402;
+.acount-edit {
   margin: 50px auto 0 auto;
+  > a {
+    color: #8e8e8e;
+    &:hover {
+      color: #007bff;
+      text-decoration: underline;
+    }
+  }
 }
 
-@media screen and (min-width: 992px) {
-  .account-edit {
-    background-color: #FDAA62;
-    &:hover {
-      background-color: #FD9534;
+.user-container-show {
+  width: 600px !important;
+}
+
+.user-posts {
+  margin-top: 40px;
+  .user-posts-lower {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    .image-container {
+      padding: 0 0 18px 0;
     }
   }
 }
 
 .user-edit-btn {
   text-decoration: none;
-  color: #fff;
   vertical-align: middle;
   margin-top: 50px;
   &:hover {
     text-decoration: none;
-    color: #fff;
   }
 }
 
 // users/edit
+
+.page-title-users {
+  color: black !important;
+  height: 60px;
+  font-size: 20px !important;
+  line-height: 60px;
+  font-weight: 700px !important;
+  border-radius: 8px 8px 0 0;
+  font-weight: bold;
+  margin-bottom: 40px !important;
+  > hr {
+    width: 470px;
+    margin: 0 auto 0 auto !important;
+  }
+}
 
 .form-group {
   display: block;
@@ -66,23 +87,73 @@
 }
 
 @media screen and (max-width: 991px) {
+  .main-users {
+    padding: 2px 0 20px 0;
+  }
   .btn-outline-secondary {
     margin-top: 30px;
   }
+  .user-container {
+    width: 335px !important;
+    margin: 0!important;
+    hr {
+      width: 310px;
+    }
+    .user-name {
+      width: 300px;
+    }
+    .user-email {
+      width: 300px;
+    }
+
+    .user-introduction {
+      width: 300px;
+    }
+    .user-edit-item-list {
+      width: 300px;
+    }
+    .form-control {
+      width: 300px;
+    }
+    .btn-primary {
+      width: 300px;
+    }
+    .acount-destroy {
+      margin-bottom: 0;
+    }
+  }
+  .user-container-show {
+    .image-container {
+      padding-bottom: 5px !important;
+      > img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
 }
 
-.image-select-btn {
+#user-image-select-btn {
   width: 180px;
   color: #22110e;
 }
 
 .user-container {
-  padding: 20px 0;
+  margin: 0 0 30px 0;
+  padding-bottom: 40px;
+  background-color: #fff;
+  width: 500px;
+  border: 1px solid black;
+  box-shadow: 0 0 8px black;
+  color: black;
+  border-radius: 10px;
+  text-align: center;
+  display: inline-block;
 }
 
 .user-name {
   width: 350px;
-  font-size: 25px;
+  font-size: 22px;
   margin: 50px auto 0 auto;
 }
 
@@ -101,45 +172,61 @@
   width: 350px;
 }
 
-.acount-destroy {
-  margin-top: 50px;
+.acount-destroy, .password-edit {
+  margin: 30px 0 0 0;
+  > a {
+    color: #8e8e8e;
+    &:hover {
+      color: #007bff;
+    }
+  }
 }
-
-.acount_destroy {
-  color: #005f9e;
-}
-
 
 
 // users/index
 
 table {
-  width: 350px;
+  width: 498px;
   margin: 40px auto 30px auto;
-}
-
-tr {
-  margin-bottom: 20px;
-}
-
-.td-user-icon {
-  text-align: left;
-  width: 100px;
+  tr {
+    height: 80px;
+    width: 498px;
+    &:hover {
+      background-color: #e8e8e8;
+    }
+  }
 }
 
 .td-user-name {
-  text-align: left;
+  width: 300px;
 }
 
 .index-user-name {
-  color: #fff;
-  font-size: 1.3rem;
+  color: black;
+  font-size: 20px;
   &:hover {
     text-decoration: none;
   }
   text-decoration: none;
 }
 
+@media screen and (max-width: 991px) {
+  .user-container {
+    table {
+      width: 333px;
+      .td-user-name {
+        width: 220px;
+        > .index-user-name {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
 
-
-  
+// users/show
+.user-introduction {
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  padding: 20px
+}

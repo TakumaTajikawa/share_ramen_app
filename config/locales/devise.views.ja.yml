@@ -16,8 +16,8 @@ ja:
         last_sign_in_at: 最終ログイン時刻
         last_sign_in_ip: 最終ログインIPアドレス
         locked_at: ロック時刻
-        password: パスワード
-        password_confirmation: パスワード（確認用）
+        new_password: 新しいパスワード
+        new_password_confirmation: 新しいパスワード（確認用）
         remember_created_at: ログイン記憶時刻
         remember_me: メールアドレスとパスワードを記憶する
         reset_password_sent_at: パスワードリセット送信時刻
@@ -116,7 +116,7 @@ ja:
       signed_up_but_locked: アカウントが凍結されているためログインできません。
       signed_up_but_unconfirmed: 本人確認用のメールを送信しました。メール内のリンクからアカウントを有効化させてください。
       update_needs_confirmation: アカウント情報を変更しました。変更されたメールアドレスの本人確認のため、本人確認用メールより確認処理をおこなってください。
-      updated: アカウント情報を変更しました。
+      updated: パスワードを変更しました。
       updated_but_not_signed_in: あなたのアカウントは正常に更新されましたが、パスワードが変更されたため、再度ログインしてください。
     sessions:
       already_signed_out: 既にログアウト済みです。
@@ -262,7 +262,7 @@ ja:
       greater_than: は%{count}より大きい値にしてください
       greater_than_or_equal_to: は%{count}以上の値にしてください
       inclusion: は一覧にありません
-      invalid: は不正な値です
+      invalid: が間違っています
       less_than: は%{count}より小さい値にしてください
       less_than_or_equal_to: は%{count}以下の値にしてください
       model_invalid: 'バリデーションに失敗しました: %{errors}'

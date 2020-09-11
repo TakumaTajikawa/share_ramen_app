@@ -1,20 +1,26 @@
 <% provide(:title, 'ユーザー一覧') %>
-<div class="user-container">
-  <h3 class="page-title">ユーザー一覧</h3>
-  <% @users.each do |user| %>
-  <table>
-    <tr>
-      <td class="td-user-icon">
-        <% if user.image? %>
-          <%= image_tag user.image.thumb.url, size: "80",  class: "user-icon" %>
-        <% else %>
-          <%= image_tag "default.jpg", alt: "user-icon", size: "80", class: "user-icon" %>
-        <% end %>
-      </td>
-      <td class="td-user-name">
-        <%= link_to user.name , user, class: "index-user-name" %>
-      </td>
-    </tr>
-  </table>  
-  <% end %>
+<div id="container">
+  <div class="user-container">
+    <h3 class="page-title page-title-users">ユーザー一覧
+      <hr>
+    </h3>
+    <table>
+      <% @users.each do |user| %>
+        <tr>
+          <td align="center" class="td-user-icon">
+            <%= link_to user do %>
+              <% if user.image? %>
+                <%= image_tag user.image.thumb.url, size: "50",  class: "user-icon" %>
+              <% else %>
+                <%= image_tag "default.jpg", alt: "user-icon", size: "50", class: "user-icon" %>
+              <% end %>
+            <% end %>
+          </td>
+          <td align="left" class="td-user-name">
+            <%= link_to user.name, user, class: "index-user-name" %>
+          </td>
+        </tr>
+      <% end %>
+    </table>  
+  </div>
 </div>

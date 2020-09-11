@@ -69,4 +69,18 @@ p {
 
 #error_explanation {
   width: 350px;
+  background-color: #fff;
+  padding: 0;
+  h2 {
+    display: none;
+  }
+  ul {
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #error_explanation {
+    width: 300px;
+  }
 }
