@@ -24,4 +24,8 @@ class Post < ApplicationRecord
   enum genre: {
     醤油:1,味噌:2,塩:3,豚骨:4,坦々麺:5,辛麺:6,つけ麺:7,油そば:8
   }
+
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
+  end
 end
