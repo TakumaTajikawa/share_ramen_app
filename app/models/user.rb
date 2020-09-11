@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :posts, dependent: :destroy, foreign_key: :post_user_id
+  has_many :posts, dependent: :destroy
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
