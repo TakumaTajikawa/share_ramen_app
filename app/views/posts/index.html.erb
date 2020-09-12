@@ -23,6 +23,37 @@
             <%= post.prefecture %>
           </div>
         <% end %>
+        <% if user_signed_in? %>
+          <% if post.liked_by?(current_user) %>
+            <div class="likes-top">
+              <i class="fas fa-heart"></i>
+              <div class="likes-count">
+                <%= post.likes.count %>
+              </div>
+            </div>
+            <div class="likes-lower">
+              <%= link_to post_likes_path(post.id), method: :delete do %>
+                <i class="far fa-grin-hearts"></i>
+                <p class="like like-on">食べたい！</p>
+              <% end %>
+            </div>
+          <% else %>
+            <div class="likes-top">
+              <i class="fas fa-heart"></i>
+              <div class="likes-count">
+                <%= post.likes.count %>
+              </div>
+            </div>
+            <div class="likes-lower">
+              <%= link_to post_likes_path(post.id), method: :post do %>
+                <i class="far fa-meh"></i>
+                <p class="like like-off">食べたい！</p>
+              <% end %>
+            </div>
+          <% end %>
+        <% else %>
+          <p><span>食べたい数: </span><%= post.likes.count %></p>
+        <% end %>
       </div>
     <% end %>
   </div>

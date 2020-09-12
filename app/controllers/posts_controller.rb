@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :ensure_correct_user,{only: [:edit,:update,:destroy]}
+  before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy]
+  before_action :ensure_correct_user, only: [:edit,:update,:destroy]
 
   def index
     @posts = Post.all
@@ -49,6 +49,8 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  
+  private
 
   def ensure_correct_user
     @post = Post.find(params[:id])
@@ -57,8 +59,6 @@ class PostsController < ApplicationController
       redirect_to root_path
     end
   end
-
-  private
 
   def post_params
     params.require(:post).permit(:store, :prefecture, :genre, :ramen, :impression, :image)
