@@ -109,11 +109,12 @@
 .ramen-post-container {
   background-color: #fff;
   width: 270px;
-  height: 410px;
+  height: auto;
   margin-top: 40px;
   border: 1px solid black;
   box-shadow: 0 0 8px black;
   border-radius: 5px;
+  padding-bottom: 7px;
   > a {
     &:hover {
       text-decoration: none;
@@ -264,6 +265,8 @@
     }
 
     .ramen-post-show-container-2-lower {
+      height: 410px;
+      position: relative;
 
       .store-container {
         padding: 0 20px 10px 20px;
@@ -289,6 +292,69 @@
 
       .impression-container {
         padding: 10px 20px;
+      }
+
+      .likes {
+        position: absolute;
+        bottom: 5px;
+        padding-left: 7px;
+      }
+      .likes-upper {
+        color: black;
+        display: flex;
+        margin-bottom: 8px;
+        margin-left: 3px;
+        
+        .fa-heart {
+          color: #ff0202;
+          display: inline-block;
+          font-size: 15px;
+        }
+        .likes-count {
+          display: inline;
+          position: relative;
+          top: 9px;
+          left: 12px;
+          font-size: 15px;
+        }
+      }
+      .likes-lower {
+        padding-left: 5px;
+        color: black;
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        > a {
+          padding-left: 5px;
+        }
+        > a:hover {
+          text-decoration: none;
+          background-color: #e8e8e8;
+          border-radius: 5px;
+          padding-left: 5px;
+        }
+        .like {
+          display: inline;
+          font-size: 15px;
+        }
+        .like-on {
+          color: red;
+          font-weight: bold;
+        }
+        .like-off {
+          color: #5e6771;
+        }
+        
+        .fa-grin-hearts {
+          color: red;
+          position: relative;
+          top: 1px;
+        }
+        .fa-meh {
+          color: #5e6771;
+          position: relative;
+          top: 1px;
+        }
       }
     }
   }
