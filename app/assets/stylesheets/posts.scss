@@ -130,7 +130,7 @@
     top: 7px;
     color: black;
   }
-  .likes-top {
+  .likes-upper {
     color: black;
     display: flex;
     margin-bottom: 8px;
@@ -357,7 +357,14 @@
   .ramen-post-container {
     margin: 20px auto;
     width: 320px;
-    height: 400px;
+    height: 460px;
+    .likes-upper {
+      .fas {
+        position: relative;
+        top: 12px;
+        left: 7px;
+      }
+    }
   }
 
   .image-container > img {

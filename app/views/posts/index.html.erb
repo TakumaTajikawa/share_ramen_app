@@ -25,7 +25,7 @@
         <% end %>
         <% if user_signed_in? %>
           <% if post.liked_by?(current_user) %>
-            <div class="likes-top">
+            <div class="likes-upper">
               <i class="fas fa-heart"></i>
               <div class="likes-count">
                 <%= post.likes.count %>
@@ -38,7 +38,7 @@
               <% end %>
             </div>
           <% else %>
-            <div class="likes-top">
+            <div class="likes-upper">
               <i class="fas fa-heart"></i>
               <div class="likes-count">
                 <%= post.likes.count %>
