@@ -34,6 +34,9 @@
         <div class="genre-container">
           ジャンル：<%= @post.genre %>
         </div>
+        <div class="image-container-responsive">
+          <%= image_tag @post.image.thumb.url, alt: "post-image", size: "500" %>
+        </div>
         <div class="ramen-container">
           品名：<%= @post.ramen %>
         </div>

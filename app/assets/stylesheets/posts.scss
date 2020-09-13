@@ -282,6 +282,10 @@
         padding: 10px 20px;
       }
 
+      .image-container-responsive {
+        display: none;
+      }
+
       .ramen-container {
         padding: 10px 20px;
       }
@@ -439,6 +443,7 @@
   }
 
   // posts/show
+
   #container {
     height: auto;
   }
@@ -446,51 +451,61 @@
   .ramen-post-show-container {
     display: block;
     padding: 0;
-    height: 780px;
+    height: auto;
     
-
     .ramen-post-show-container-1 {
-      border: none;
-      width: 350px;
-      height: 350px;
-      box-shadow: none;
-      margin: auto;
-      text-align-last: center;
-      position: relative;
-      top: 150px;
-      z-index: 2;
-
+      display: none;
     }
 
     .ramen-post-show-container-2 {
       margin: 70px auto 0 auto;
       height: auto;
-      position: relative;
-      bottom: 450px;
       border: 1px solid black;
       box-shadow: 0 0 8px black;
-      z-index: 1;
 
       .ramen-post-show-container-2-lower {
-        position: relative;
         top: 1px;
-        z-index: 1;
+        height: auto;
 
         .prefecture-container {
-          padding-bottom: 330px;
           padding-top: 0;
         }
 
         .genre-container {
-          padding: 5px 20px;
+          padding: 0 20px 10px 20px;
+        }
+
+        .image-container-responsive {
+          width: 300px;
+          display: block;
+          margin: auto;
+          
+          > img {
+            text-align: center;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+          }
         }
 
         .ramen-container {
-          padding: 5px 20px;
+          padding: 10px 20px 2px 20px;
         }
 
         .between-r-i {
           margin-top: 10px;
+        }
+
+        .likes {
+          position: static;
+          padding-bottom: 10px;
+          .likes-upper {
+            .fas {
+             position: relative;
+             top: 12px;
+             left: 7px;
+            }
+          }
         }
       }
     }
