@@ -115,6 +115,10 @@
   box-shadow: 0 0 8px black;
   border-radius: 5px;
   padding-bottom: 7px;
+  &:hover {
+    box-shadow: 0 0 20px black;
+    background-color: #f0f0f0 !important;
+  }
   > a {
     &:hover {
       text-decoration: none;
@@ -160,7 +164,7 @@
     }
     > a:hover {
       text-decoration: none;
-      background-color: #e8e8e8;
+      background-color: #e0e0e0;
       border-radius: 5px;
       padding-left: 5px;
     }

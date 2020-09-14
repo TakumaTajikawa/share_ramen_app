@@ -28,9 +28,8 @@
   .user-posts-lower {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
     .image-container {
-      padding: 0 0 18px 0;
+      padding: 0 0 18px 21px;
     }
   }
 }
@@ -41,6 +40,12 @@
   margin-top: 50px;
   &:hover {
     text-decoration: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .users-show-hr {
+    width: 570px !important;
   }
 }
 
@@ -222,11 +227,15 @@ table {
       }
     }
   }
-}
-
-// users/show
-.user-introduction {
-  border: 1px solid #e5e5e5;
-  border-radius: 5px;
-  padding: 20px
+  
+  // users/show
+  .user-introduction {
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    padding: 20px
+  }
+  
+  .image-container {
+    padding: 0 0 18px 8px !important;
+  }
 }
