@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
   default_scope -> { order(created_at: :desc) }
-  validates :store, presence: true, length: { maximum: 24 }
+  validates :store, presence: true, length: { maximum: 16 }
   validates :prefecture, presence: { message: 'を選択してください。' }
   validates :genre, presence: { message: 'を選択してください。' }
   validates :ramen, presence: true, length: { maximum: 16 }
