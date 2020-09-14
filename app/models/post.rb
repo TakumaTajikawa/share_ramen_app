@@ -1,11 +1,12 @@
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :likes, dependent: :destroy
   default_scope -> { order(created_at: :desc) }
-  validates :store, presence: true, length: { maximum: 20 }
+  validates :store, presence: true, length: { maximum: 16 }
   validates :prefecture, presence: { message: 'を選択してください。' }
   validates :genre, presence: { message: 'を選択してください。' }
-  validates :ramen, presence: true
-  validates :impression, presence: true
+  validates :ramen, presence: true, length: { maximum: 16 }
+  validates :impression, presence: true, length: { maximum: 110 }
   validates :image, presence: { message: 'をアップロードしてください。' }
   mount_uploader :image, ImageUploader
 
@@ -23,4 +24,8 @@ class Post < ApplicationRecord
   enum genre: {
     醤油:1,味噌:2,塩:3,豚骨:4,坦々麺:5,辛麺:6,つけ麺:7,油そば:8
   }
+
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
+  end
 end

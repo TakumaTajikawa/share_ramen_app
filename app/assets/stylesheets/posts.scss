@@ -109,11 +109,12 @@
 .ramen-post-container {
   background-color: #fff;
   width: 270px;
-  height: 365px;
+  height: auto;
   margin-top: 40px;
   border: 1px solid black;
   box-shadow: 0 0 8px black;
   border-radius: 5px;
+  padding-bottom: 7px;
   > a {
     &:hover {
       text-decoration: none;
@@ -129,6 +130,62 @@
     position: relative;
     top: 7px;
     color: black;
+  }
+  .likes-upper {
+    color: black;
+    display: flex;
+    margin-bottom: 8px;
+    margin-left: 3px;
+    
+    .fa-heart {
+      color: #ff0202;
+      display: inline-block;
+      font-size: 15px;
+    }
+    .likes-count {
+      display: inline;
+      position: relative;
+      top: 9px;
+      left: 12px;
+      font-size: 15px;
+    }
+  }
+  .likes-lower {
+    padding-left: 5px;
+    color: black;
+    text-align: left;
+    display: flex;
+    > a {
+      padding-left: 5px;
+    }
+    > a:hover {
+      text-decoration: none;
+      background-color: #e8e8e8;
+      border-radius: 5px;
+      padding-left: 5px;
+    }
+    .like {
+      display: inline;
+      font-size: 15px;
+    }
+    .like-on {
+      color: red;
+      font-weight: bold;
+    }
+    .like-off {
+      color: #5e6771;
+    }
+    
+    .fa-grin-hearts {
+      color: red;
+      position: relative;
+      top: 1px;
+    }
+    .fa-meh {
+      color: #5e6771;
+      position: relative;
+      top: 1px;
+    }
   }
 }
 
@@ -208,6 +265,8 @@
     }
 
     .ramen-post-show-container-2-lower {
+      height: 410px;
+      position: relative;
 
       .store-container {
         padding: 0 20px 10px 20px;
@@ -223,6 +282,10 @@
         padding: 10px 20px;
       }
 
+      .image-container-responsive {
+        display: none;
+      }
+
       .ramen-container {
         padding: 10px 20px;
       }
@@ -233,6 +296,69 @@
 
       .impression-container {
         padding: 10px 20px;
+      }
+
+      .likes {
+        position: absolute;
+        bottom: 5px;
+        padding-left: 7px;
+      }
+      .likes-upper {
+        color: black;
+        display: flex;
+        margin-bottom: 8px;
+        margin-left: 3px;
+        
+        .fa-heart {
+          color: #ff0202;
+          display: inline-block;
+          font-size: 15px;
+        }
+        .likes-count {
+          display: inline;
+          position: relative;
+          top: 9px;
+          left: 12px;
+          font-size: 15px;
+        }
+      }
+      .likes-lower {
+        padding-left: 5px;
+        color: black;
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        > a {
+          padding-left: 5px;
+        }
+        > a:hover {
+          text-decoration: none;
+          background-color: #e8e8e8;
+          border-radius: 5px;
+          padding-left: 5px;
+        }
+        .like {
+          display: inline;
+          font-size: 15px;
+        }
+        .like-on {
+          color: red;
+          font-weight: bold;
+        }
+        .like-off {
+          color: #5e6771;
+        }
+        
+        .fa-grin-hearts {
+          color: red;
+          position: relative;
+          top: 1px;
+        }
+        .fa-meh {
+          color: #5e6771;
+          position: relative;
+          top: 1px;
+        }
       }
     }
   }
@@ -301,7 +427,14 @@
   .ramen-post-container {
     margin: 20px auto;
     width: 320px;
-    height: 400px;
+    height: auto;
+    .likes-upper {
+      .fas {
+        position: relative;
+        top: 12px;
+        left: 7px;
+      }
+    }
   }
 
   .image-container > img {
@@ -310,6 +443,7 @@
   }
 
   // posts/show
+
   #container {
     height: auto;
   }
@@ -317,51 +451,61 @@
   .ramen-post-show-container {
     display: block;
     padding: 0;
-    height: 780px;
+    height: auto;
     
-
     .ramen-post-show-container-1 {
-      border: none;
-      width: 350px;
-      height: 350px;
-      box-shadow: none;
-      margin: auto;
-      text-align-last: center;
-      position: relative;
-      top: 150px;
-      z-index: 2;
-
+      display: none;
     }
 
     .ramen-post-show-container-2 {
       margin: 70px auto 0 auto;
       height: auto;
-      position: relative;
-      bottom: 450px;
       border: 1px solid black;
       box-shadow: 0 0 8px black;
-      z-index: 1;
 
       .ramen-post-show-container-2-lower {
-        position: relative;
         top: 1px;
-        z-index: 1;
+        height: auto;
 
         .prefecture-container {
-          padding-bottom: 330px;
           padding-top: 0;
         }
 
         .genre-container {
-          padding: 5px 20px;
+          padding: 0 20px 10px 20px;
+        }
+
+        .image-container-responsive {
+          width: 300px;
+          display: block;
+          margin: auto;
+          
+          > img {
+            text-align: center;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+          }
         }
 
         .ramen-container {
-          padding: 5px 20px;
+          padding: 10px 20px 2px 20px;
         }
 
         .between-r-i {
           margin-top: 10px;
+        }
+
+        .likes {
+          position: static;
+          padding-bottom: 10px;
+          .likes-upper {
+            .fas {
+             position: relative;
+             top: 12px;
+             left: 7px;
+            }
+          }
         }
       }
     }

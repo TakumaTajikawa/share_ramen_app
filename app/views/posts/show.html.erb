@@ -34,12 +34,18 @@
         <div class="genre-container">
           ジャンル：<%= @post.genre %>
         </div>
+        <div class="image-container-responsive">
+          <%= image_tag @post.image.thumb.url, alt: "post-image", size: "500" %>
+        </div>
         <div class="ramen-container">
           品名：<%= @post.ramen %>
         </div>
         <hr class="between-r-i">
         <div class="impression-container">
           <%= @post.impression %>
+        </div>
+        <div id="likes_buttons_<%= @post.id %>">
+          <%= render partial: 'likes/like', locals: { post: @post } %>
         </div>
       </div>
     </div>

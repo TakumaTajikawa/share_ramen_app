@@ -23,6 +23,11 @@
             <%= post.prefecture %>
           </div>
         <% end %>
+        <% if user_signed_in? %>
+          <div id="likes_buttons_<%= post.id %>">
+          <%= render partial: 'likes/like', locals: { post: post } %>
+        </div>
+        <% end %>
       </div>
     <% end %>
   </div>

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
   }
   resources :users, only: [:index, :show, :edit, :update, :destroy]
-  resources :posts
+  resources :posts do
+    resource :likes, only: [:create, :destroy]
+  end
   
 end
