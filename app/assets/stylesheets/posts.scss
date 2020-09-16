@@ -418,6 +418,7 @@
           background-color: #eff2f5;
           padding: 5px 9px 4px 9px;
           border-radius: 12px;
+          margin-left: 5px;
           > a:hover {
             text-decoration: none;
           }
@@ -456,7 +457,7 @@
         border-radius: 0;
       }
 
-      .btn {
+      .btn-success {
         padding: 3px 5px;
         margin-top: 1px !important;
       }
@@ -544,24 +545,28 @@
 
   // posts/show
 
-  #container {
+  .container-post-show {
     height: auto;
+
   }
 
   .ramen-post-show-container {
     display: block;
     padding: 0;
     height: auto;
+    border: 1px solid black;
+    box-shadow: 0 0 8px black;
+    width: 350px;
+    margin: 0 auto;
     
     .ramen-post-show-container-1 {
       display: none;
     }
 
     .ramen-post-show-container-2 {
-      margin: 70px auto 0 auto;
+      margin: 0 auto;
       height: auto;
-      border: 1px solid black;
-      box-shadow: 0 0 8px black;
+      border-bottom: none;
 
       .ramen-post-show-container-2-lower {
         top: 1px;
@@ -607,6 +612,32 @@
             }
           }
         }
+      }
+    }
+    .ramen-post-show-container-3 {
+      width: 350px;
+      height: auto;
+      margin: 0 auto;
+      border: none;
+      border-radius: 0;
+      border-top: 1px solid #e5e5e5;
+      .comment-index {
+        height: auto;
+        width: 350px;
+      }
+      .comment-create {
+        height: auto;
+        width: 350px;
+        padding-bottom: 15px;
+        textarea {
+          width: 348px;
+          margin: 0 auto !important;
+        }
+        .btn-success {
+          margin-top: 15px !important;
+          padding:  6px 15px !important;
+        }
+        
       }
     }
   }
