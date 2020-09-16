@@ -384,7 +384,7 @@
       }
     
       > hr {
-        margin: 16px;
+        margin: 16px 0;
         position: relative;
         top: 3px;
       }
@@ -393,7 +393,8 @@
     .comment-index {
       height: 297px;
       overflow: auto;
-      padding-left: 15px;
+      padding: 0 15px;
+  
 
       .comment-list {
         margin: 8px 0 26px 0;
@@ -404,7 +405,7 @@
           font-size: 14px;
           background-color: #eff2f5;
           padding: 5px 9px 4px 9px;
-          border-radius: 10px;
+          border-radius: 12px;
           > a:hover {
             text-decoration: none;
           }
