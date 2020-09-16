@@ -74,6 +74,13 @@
                 <%= comment.content %>
               </div>
             </div>
+            <div class="comment-destroy">
+              <% if comment.user_id == current_user.id || @post.user_id == current_user.id %>
+                <%= link_to post_comments_path(@post.id), method: :delete, data: {confirm: "本当にコメントを削除しますか?", cancel: "やめる", commit: "削除する"}, title: "削除確認" do %>
+                  <i class="fas fa-trash"></i>
+                <% end %>
+              <% end %>
+            </div>
           <% end %>
         <% end %>
       </div>

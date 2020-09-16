@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:post_id])
-    @comment = @post.comment.find(params[:id])
+    @comment = Comment.find_by(post_id: params[:post_id], user_id: current_user.id)
     @comment.destroy
     flash[:success] = "コメントを削除しました"
     redirect_back(fallback_location: post_path(@post.id))

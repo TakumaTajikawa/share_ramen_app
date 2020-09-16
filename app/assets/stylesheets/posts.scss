@@ -397,7 +397,7 @@
   
 
       .comment-list {
-        margin: 8px 0 26px 0;
+        margin: 8px 0 0 0;
         display: flex;
 
         .comment-user-name-container {
@@ -418,10 +418,21 @@
             
           }
         }
-
       }
-
     }
+    .comment-destroy {
+      padding-left: 38px;
+      margin-bottom: 30px;
+      padding-top: 3px;
+
+      .fa-trash {
+        color: #8e8e8e;
+        display: block;
+        font-size: 3px;
+        position: static;
+      }
+    }
+
     .comment-create {
       width: 298px;
       height: 83px;
