@@ -20,9 +20,9 @@
       <%= @user.name %>
       <% if current_user != @user %>
         <% if @user.followed_by?(current_user) %>
-          <%=link_to "フォロー中", user_relationships_path(@user.id), method: :delete, class: "following" %>
+          <%= link_to "フォロー中", user_relationships_path(@user.id), method: :delete, class: "following" %>
         <% else %>
-          <%=link_to "フォローする", user_relationships_path(@user.id), method: :post, class: "to-follow" %>
+          <%= link_to "フォローする", user_relationships_path(@user.id), method: :post, class: "to-follow" %>
         <% end %>
       <% end %>
     </div>
