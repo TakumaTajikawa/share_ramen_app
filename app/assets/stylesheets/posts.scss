@@ -529,6 +529,15 @@
     margin: 20px auto;
     width: 320px;
     height: auto;
+
+    .user-icon {
+      margin-bottom: 13px;
+    }
+
+    .post-user-name-container {
+      position: relative;
+      top: 1px;
+    }
     .likes-upper {
       .fas {
         position: relative;
@@ -542,7 +551,6 @@
     width: 300px;
     height: 300px;
   }
-
   // posts/show
 
   .container-post-show {
