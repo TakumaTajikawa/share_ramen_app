@@ -20,12 +20,10 @@
             <%= link_to user.name, user, class: "index-user-name" %>
           </td>
           <td>
-            <% if current_user != user %>
-              <% if user.followed_by?(current_user) %>
-                <%=link_to "フォロー中", user_relationships_path(user.id), method: :delete, class: "following" %>
-              <% else %>
-                <%=link_to "フォローする", user_relationships_path(user.id), method: :post, class: "to-follow" %>
-              <% end %>
+            <% if current_user != user%>
+              <div id="follow_form_<%= user.id %>">
+                <%= render partial: 'relationships/follow', locals: { user: user } %>
+              </div>
             <% end %>
           </td>
         </tr>
