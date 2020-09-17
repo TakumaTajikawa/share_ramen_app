@@ -35,10 +35,10 @@
     <div class="user-posts">
       <h3 class="page-title page-title-users"><hr class="users-show-hr">
         <% if current_user == @user %>
-          <%= "#{@user.name}の投稿一覧" %>
+          <%= "#{@user.name}の投稿#{@posts.count}件" %>
           <hr class="users-show-hr">
         <% else %>
-          <%= "#{@user.name}さんの投稿一覧" %>
+          <%= "#{@user.name}さんの投稿#{@posts.count}件" %>
           <hr class="users-show-hr">
         <% end %>
       </h3>
