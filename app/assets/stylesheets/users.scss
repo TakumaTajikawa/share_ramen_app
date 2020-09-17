@@ -21,6 +21,33 @@
 
 .user-container-show {
   width: 600px !important;
+
+  .user-name-and-follow-tag {
+    text-align: center;
+  }
+
+  .following, .to-follow {
+    display: inline-block;
+    font-size: 13px;
+    margin-left: 20px;
+    border-radius: 5px;
+    position: relative;
+    top: -2px;
+  }
+
+  .follow-and-follower-count {
+    padding-top: 30px;
+
+    .followings-count, .followers-count {
+      color: black;
+      padding: 0 15px;
+    } 
+
+    span {
+      font-weight: bold;
+    }
+  }
+  
 }
 
 .user-posts {
