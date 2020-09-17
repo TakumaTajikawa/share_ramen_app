@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :show, :edit, :update, :destroy]
-  before_action :ensure_correct_user, only: [:edit, :update]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
   
   def index
     @users = User.all
@@ -32,6 +32,16 @@ class UsersController < ApplicationController
     @user.destroy
     flash[:success] = "アカウントを削除しました。"
     redirect_to root_path
+  end
+
+  def follows
+    user = User.find(params[:id])
+    @users = user.followings
+  end
+
+  def followers
+    user = User.find(params[:id])
+    @users = user.followers
   end
 
   
