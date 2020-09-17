@@ -1,6 +1,6 @@
-.<% provide(:title, 'フォロー中') %>
+<% provide(:title, 'フォロー中') %>
 <div id="container">
-  <div class="user-container user-index-container">
+  <div class="user-container follow-and-follower-container user-index-container">
     <% if current_user == @user %>
       <h3 class="page-title page-title-users">
         <%= "#{@user.name}がフォロー中" %>
@@ -14,7 +14,7 @@
     <% end %>
     <table>
       <% if @users.blank? %>
-        <p>まだフォローしていません</p>
+        <p class="follow-and-follower-blank">まだフォローしていません</p>
       <% else %>
         <% @users.each do |user| %>
           <tr>

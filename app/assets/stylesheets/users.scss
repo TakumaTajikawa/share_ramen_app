@@ -331,9 +331,13 @@ table {
       top: -3px;
       padding: 3px 7px;
     }
-
   }
-  
+}
 
-  
+// users/follws・follower
+.follow-and-follower-container {
+  min-height: 615px;
+}
+.follow-and-follower-blank {
+  padding: 0 0 380px 0;
 }
