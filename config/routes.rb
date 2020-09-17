@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'relationships/create'
+  get 'relationships/destroy'
   root 'posts#index'
   get :about, to: 'home#about'
   devise_for :users, controllers: {
