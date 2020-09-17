@@ -115,6 +115,10 @@
   box-shadow: 0 0 8px black;
   border-radius: 5px;
   padding-bottom: 7px;
+  &:hover {
+    box-shadow: 0 0 20px black;
+    background-color: #f0f0f0 !important;
+  }
   > a {
     &:hover {
       text-decoration: none;
@@ -160,7 +164,7 @@
     }
     > a:hover {
       text-decoration: none;
-      background-color: #e8e8e8;
+      background-color: #e0e0e0;
       border-radius: 5px;
       padding-left: 5px;
     }
@@ -200,10 +204,22 @@
 
 // posts/show
 
+@media screen and (min-width: 992px) {
+  .container-post-show {
+    padding: 70px 0;
+  }
+
+  .ramen-post-show-container {
+    width: 1151px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px black;
+    height: 502px;
+  }
+}
+
 .ramen-post-show-container {
   display: flex;
   justify-content: center;
-  padding: 70px 0;
 
   .ramen-post-show-container-1 {
     height: 502px;
@@ -211,7 +227,6 @@
     border-top: 1px solid black;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
-    box-shadow: -1px 0 8px black;
   }
 
   .ramen-post-show-container-2 {
@@ -221,13 +236,12 @@
     color: black;
     padding-top: 13px;
     border-top: 1px solid black;
-    border-right: 1px solid black;
+    border-right: 1px solid #e5e5e5;
     border-bottom: 1px solid black;
-    border-radius: 0 3px 3px 0;
-    box-shadow: 1px 0 8px black;
-    
 
     .ramen-post-show-container-2-upper {
+      display: flex;
+      justify-content: space-between;
       a {
         &:hover {
           text-decoration: none;
@@ -235,10 +249,9 @@
       }
       .post-edit-link {
         font-size: 12px;
-        display: inline-block;
         position: relative;
-        top: 6px;
-        left: 60px;
+        top: 15px;
+        padding-right: 3px;
         > a {
           color: #8e8e8e;
           &:hover {
@@ -362,6 +375,94 @@
       }
     }
   }
+  .ramen-post-show-container-3 {
+    background-color: #fff;
+    height: 502px;
+    width: 300px;
+    color: black;
+    padding-top: 10px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 0 3px 3px 0;
+
+    .ramen-post-show-container-3-upper {
+      padding-top: 16px;
+
+      p {
+        font-size: 16px;
+        text-align: left;
+        padding-left: 15px;
+      }
+    
+      > hr {
+        margin: 16px 0;
+        position: relative;
+        top: 3px;
+      }
+    }
+
+    .comment-index {
+      height: 297px;
+      overflow: auto;
+      padding: 0 15px;
+  
+
+      .comment-list {
+        margin: 8px 0 0 0;
+        display: flex;
+
+        .comment-user-name-container {
+          display: inline-block;
+          font-size: 14px;
+          background-color: #eff2f5;
+          padding: 5px 9px 4px 9px;
+          border-radius: 12px;
+          margin-left: 5px;
+          > a:hover {
+            text-decoration: none;
+          }
+
+          .comment-user-name {
+            margin-bottom: 5px;
+            font-size: 13px;
+            font-weight: bold;
+            color: black;
+            
+          }
+        }
+      }
+    }
+    .comment-destroy {
+      padding-left: 38px;
+      margin-bottom: 30px;
+      padding-top: 3px;
+
+      .fa-trash {
+        color: #8e8e8e;
+        display: block;
+        font-size: 3px;
+        position: static;
+      }
+    }
+
+    .comment-create {
+      width: 298px;
+      height: 83px;
+      text-align: center;
+
+      textarea {
+        width: 298px;
+        height: 83px;
+        border-radius: 0;
+      }
+
+      .btn-success {
+        padding: 3px 5px;
+        margin-top: 1px !important;
+      }
+    }
+  }
 }
 
 // posts/edit
@@ -444,24 +545,28 @@
 
   // posts/show
 
-  #container {
+  .container-post-show {
     height: auto;
+
   }
 
   .ramen-post-show-container {
     display: block;
     padding: 0;
     height: auto;
+    border: 1px solid black;
+    box-shadow: 0 0 8px black;
+    width: 350px;
+    margin: 0 auto;
     
     .ramen-post-show-container-1 {
       display: none;
     }
 
     .ramen-post-show-container-2 {
-      margin: 70px auto 0 auto;
+      margin: 0 auto;
       height: auto;
-      border: 1px solid black;
-      box-shadow: 0 0 8px black;
+      border-bottom: none;
 
       .ramen-post-show-container-2-lower {
         top: 1px;
@@ -507,6 +612,32 @@
             }
           }
         }
+      }
+    }
+    .ramen-post-show-container-3 {
+      width: 350px;
+      height: auto;
+      margin: 0 auto;
+      border: none;
+      border-radius: 0;
+      border-top: 1px solid #e5e5e5;
+      .comment-index {
+        height: auto;
+        width: 350px;
+      }
+      .comment-create {
+        height: auto;
+        width: 350px;
+        padding-bottom: 15px;
+        textarea {
+          width: 348px;
+          margin: 0 auto !important;
+        }
+        .btn-success {
+          margin-top: 15px !important;
+          padding:  6px 15px !important;
+        }
+        
       }
     }
   }

@@ -1,6 +1,6 @@
 <% provide(:title, "投稿詳細") %>
 
-<div id="containr">
+<div id="containr" class="container-post-show">
   <div class="ramen-post-show-container">
     <div class="image-container ramen-post-show-container-1">
       <%= image_tag @post.image.thumb.url, alt: "post-image", size: "500" %>
@@ -48,6 +48,52 @@
           <%= render partial: 'likes/like', locals: { post: @post } %>
         </div>
       </div>
+    </div>
+    <div class="ramen-post-show-container-3">
+      <div class="ramen-post-show-container-3-upper">
+        <p><%= "コメント#{@comments.count}件" %></p>
+        <hr>
+      </div>
+      <div class="comment-index">
+        <% @comments.each do |comment| %>
+          <% unless comment.user.blank? %>
+            <div class="comment-list">
+              <%= link_to user_path(comment.user_id) do %>
+                <% if comment.user.image? %>
+                  <%= image_tag comment.user.image.thumb.url, size: "30", class: "user-icon" %>
+                <% else %>
+                  <%= image_tag "default.jpg", alt: "user-icon", size: "30", class: "user-icon" %>
+                <% end %>
+              <% end %>
+              <div class="comment-user-name-container">
+                <%= link_to user_path(comment.user_id) do %>
+                  <h6 class="comment-user-name">
+                    <%= comment.user.name %><br>
+                  </h6>
+                <% end %>
+                <%= comment.content %>
+              </div>
+            </div>
+            <div class="comment-destroy">
+              <% if comment.user_id == current_user.id || @post.user_id == current_user.id %>
+                <%= link_to post_comment_path(@post, comment), method: :delete, data: {confirm: "本当にコメントを削除しますか?", cancel: "やめる", commit: "削除する"}, title: "削除確認" do %>
+                  <i class="fas fa-trash"></i>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <% if user_signed_in? %>
+        <div class="comment-create">
+          <%= form_for [@post, @comment] do |f| %>
+            <%= f.text_area :content, class: "form-control", rows: 5, placeholder: "コメントする...", maxlength: "250" %>
+            <%= button_tag type: "submit", class: "btn btn-success" do %>
+              <i class="far fa-comments"></i>  投稿する
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
