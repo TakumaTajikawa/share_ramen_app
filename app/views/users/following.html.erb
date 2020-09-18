@@ -1,17 +1,10 @@
 <% provide(:title, 'フォロー中') %>
 <div id="container">
   <div class="user-container follow-and-follower-container user-index-container">
-    <% if current_user == @user %>
-      <h3 class="page-title page-title-users">
-        <%= "#{@user.name}がフォロー中" %>
-        <hr class="users-show-hr">
-      </h3>
-    <% else %>
-      <h3 class="page-title page-title-users">
-        <%= "#{@user.name}さんがフォロー中" %>
-        <hr>
-      </h3>
-    <% end %>
+    <h3 class="page-title page-title-users">
+      <%= "#{@user.name}がフォロー中" %>
+      <hr>
+    </h3>
     <table>
       <% if @users.blank? %>
         <p class="follow-and-follower-blank">まだフォローしていません</p>
