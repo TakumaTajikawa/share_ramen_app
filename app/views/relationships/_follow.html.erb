@@ -1,4 +1,0 @@
-<%= form_for(current_user, url: user_relationships_path(@user), method: :post, remote: true) do |f| %>
-  <%= hidden_field_tag :following_id, @user.id %>
-  <%= f.submit "フォローする", class: "to-follow" %>
-<% end %>
