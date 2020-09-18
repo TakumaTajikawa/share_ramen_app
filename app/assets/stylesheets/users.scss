@@ -21,19 +21,22 @@
 
 .user-container-show {
   width: 600px !important;
-
+  > .page-title {
+    font-size: 21px !important;
+  }
   .user-name-and-follow-tag {
     text-align: center;
+    #follow_form {
+      display: inline-block;
+    }
+    .following, .to-follow {
+      display: inline-block;
+      font-size: 13px;
+      margin-left: 20px;
+      border-radius: 5px;
+    }
   }
 
-  .following, .to-follow {
-    display: inline-block;
-    font-size: 13px;
-    margin-left: 20px;
-    border-radius: 5px;
-    position: relative;
-    top: -2px;
-  }
 
   .follow-and-follower-count {
     padding-top: 30px;
@@ -340,4 +343,12 @@ table {
 }
 .follow-and-follower-blank {
   padding: 0 0 380px 0;
+}
+
+@media screen and (max-width: 991px) {
+  .follow-and-follower-container {
+    .page-title {
+      font-size: 16px !important;
+    }
+  }
 }

@@ -9,7 +9,7 @@
     <% else %>
       <h3 class="page-title page-title-users">
         <%= "#{@user.name}さんのフォロワー" %>
-        <hr>
+        <hr class="users-show-hr">
       </h3>
     <% end %>
     <table>
@@ -32,11 +32,7 @@
             </td>
             <td>
               <% if current_user != user %>
-                <% if user.followed_by?(current_user) %>
-                  <%=link_to "フォロー中", user_relationships_path(user.id), method: :delete, class: "following" %>
-                <% else %>
-                  <%=link_to "フォローする", user_relationships_path(user.id), method: :post, class: "to-follow" %>
-                <% end %>
+                <%= render "users/follow_form" %>
               <% end %>
             </td>
           </tr>

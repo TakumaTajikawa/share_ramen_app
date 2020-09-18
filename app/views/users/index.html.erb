@@ -21,18 +21,6 @@
           </td>
           <td>
             <% if current_user != user %>
-              <div id="follow_form2">
-                <% if current_user.following?(user) %>
-                  <%= form_for(current_user, url: relationship_path(user), method: :delete, remote: true) do |f| %>
-                    <%= f.submit "フォロー中", class: "following" %>
-                  <% end %>
-                <% else %>
-                  <%= form_for(current_user, url: relationships_path, method: :post, remote: true) do |f| %>
-                    <%= hidden_field_tag :following_id, user.id %>
-                    <%= f.submit "フォローする", class: "to-follow" %>
-                  <% end %>
-                <% end %>
-              </div>
             <% end %>
           </td>
         </tr>
