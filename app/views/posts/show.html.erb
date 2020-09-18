@@ -22,11 +22,7 @@
             <%= link_to "投稿を編集する", edit_post_path(@post) %>
           </div>
         <% else %>
-          <% if @post.user.followed_by?(current_user) %>
-            <%= link_to "フォロー中", user_relationships_path(@post.user_id), method: :delete, class: "following" %>
-          <% else %>
-            <%= link_to "フォローする", user_relationships_path(@post.user_id), method: :post, class: "to-follow" %>
-          <% end %>
+          <%= render "users/follow_form" %>
         <% end %>
       </div>
       <hr>
