@@ -271,6 +271,9 @@
       .to-follow {
         color: #0095f6;
       }
+      *:focus {
+        outline: none;
+      }
     }
 
     .user-icon {
