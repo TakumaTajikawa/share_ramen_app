@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @post = Post.find_by(id: params[:id])
   end
 
   def new
@@ -27,7 +28,6 @@ class PostsController < ApplicationController
     @user = @post.user
     @comment = Comment.new
     @comments = @post.comment.all
-    
   end
 
   def edit
@@ -51,6 +51,11 @@ class PostsController < ApplicationController
     @post.destroy
     flash[:success] = "投稿を削除しました。"
     redirect_to root_path
+  end
+
+  def likes
+    @post = Post.find_by(id: params[:id])
+    @likes = Like.where(post_id: @post.id)
   end
 
   
