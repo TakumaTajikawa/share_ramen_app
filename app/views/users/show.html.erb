@@ -28,46 +28,48 @@
         <%= link_to "プロフィールを編集", edit_user_path(@user), class: "user-edit-btn" %>
       </div>
     <% end %>
-    <ul class="tab">
-      <li class="select">投稿</li>
-      <li>食べたい！を押した投稿</li>
-    </ul>
-    <ul class="content">
-      <li>
-        <div class="user-posts">
-          <h3 class="page-title page-title-users"><hr class="users-show-hr">
-            <%= "投稿 #{@posts.count}件" %>
-            <hr class="users-show-hr">
-          </h3>
-          <div class="user-posts-lower">
-            <% @posts.each do |post| %>
-              <%= link_to post_path(post) do %>
-                <div class="image-container">
-                  <%= image_tag post.image.thumb.url, alt: "post-image", size: "170" %>
-                </div>
+    <div class="tab-container">
+      <ul class="tab">
+        <li class="select">投稿</li>
+        <li>食べたい！を押した投稿</li>
+      </ul>
+      <ul class="content">
+        <li>
+          <div class="user-posts">
+            <h3 class="page-title page-title-users"><hr class="users-show-hr">
+              <%= "投稿 #{@posts.count}件" %>
+              <hr class="users-show-hr">
+            </h3>
+            <div class="user-posts-lower">
+              <% @posts.each do |post| %>
+                <%= link_to post_path(post) do %>
+                  <div class="image-container">
+                    <%= image_tag post.image.thumb.url, alt: "post-image", size: "170" %>
+                  </div>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
-        </div>
-      </li>
-      <li class="hide">
-        <div class="user-posts user-like-post">
-          <h3 class="page-title page-title-users"><hr class="users-show-hr">
-            <%= "食べたいを押した投稿 #{@posts.count}件" %>
-            <hr class="users-show-hr">
-          </h3>
-          <div class="user-posts-lower">
-            <% @posts.each do |post| %>
-              <%= link_to post_path(post) do %>
-                <div class="image-container">
-                  <%= image_tag post.image.thumb.url, alt: "post-image", size: "170" %>
-                </div>
+        </li>
+        <li class="hide">
+          <div class="user-posts user-like-post">
+            <h3 class="page-title page-title-users"><hr class="users-show-hr">
+              <%= "食べたい！を押した投稿 #{@posts.count}件" %>
+              <hr class="users-show-hr">
+            </h3>
+            <div class="user-posts-lower">
+              <% @posts.each do |post| %>
+                <%= link_to post_path(post) do %>
+                  <div class="image-container">
+                    <%= image_tag post.image.thumb.url, alt: "post-image", size: "170" %>
+                  </div>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
-        </div>
-      </li>
-    </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 
