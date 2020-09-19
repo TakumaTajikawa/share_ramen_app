@@ -212,8 +212,9 @@
   .ramen-post-show-container {
     width: 1151px;
     margin: 0 auto;
-    box-shadow: 0 0 10px black;
-    height: 502px;
+    box-shadow: 0 0 15px black;
+    border: 1px solid black;
+    height: 504px;
   }
 }
 
@@ -224,9 +225,6 @@
   .ramen-post-show-container-1 {
     height: 502px;
     padding: 0;
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
   }
 
   .ramen-post-show-container-2 {
@@ -235,9 +233,7 @@
     width: 350px;
     color: black;
     padding-top: 13px;
-    border-top: 1px solid black;
-    border-right: 1px solid #e5e5e5;
-    border-bottom: 1px solid black;
+    
 
     .ramen-post-show-container-2-upper {
       display: flex;
@@ -247,17 +243,36 @@
           text-decoration: none;
         }
       }
+      .post-user-name-container {
+        font-weight: bold;
+      }
       .post-edit-link {
         font-size: 12px;
         position: relative;
         top: 15px;
-        padding-right: 3px;
+        margin-right: 8px;
         > a {
           color: #8e8e8e;
           &:hover {
             color: #007bff;
           }
         }
+      }
+      .following, .to-follow {
+        font-size: 15px;
+        margin-right: 5px;
+        position: relative;
+        top: 10px;
+        height: auto !important;
+        background-color: #fff;
+        border: none;
+      }
+
+      .to-follow {
+        color: #0095f6;
+      }
+      *:focus {
+        outline: none;
       }
     }
 
@@ -381,9 +396,7 @@
     width: 300px;
     color: black;
     padding-top: 10px;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
+    
     border-radius: 0 3px 3px 0;
 
     .ramen-post-show-container-3-upper {
@@ -529,6 +542,15 @@
     margin: 20px auto;
     width: 320px;
     height: auto;
+
+    .user-icon {
+      margin-bottom: 13px;
+    }
+
+    .post-user-name-container {
+      position: relative;
+      top: 1px;
+    }
     .likes-upper {
       .fas {
         position: relative;
@@ -542,7 +564,6 @@
     width: 300px;
     height: 300px;
   }
-
   // posts/show
 
   .container-post-show {
@@ -555,8 +576,8 @@
     padding: 0;
     height: auto;
     border: 1px solid black;
-    box-shadow: 0 0 8px black;
-    width: 350px;
+    box-shadow: 0 0 8px black !important;
+    width: 352px;
     margin: 0 auto;
     
     .ramen-post-show-container-1 {

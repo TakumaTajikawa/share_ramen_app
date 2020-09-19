@@ -3,7 +3,7 @@
 <div id="containr" class="container-post-show">
   <div class="ramen-post-show-container">
     <div class="image-container ramen-post-show-container-1">
-      <%= image_tag @post.image.thumb.url, alt: "post-image", size: "500" %>
+      <%= image_tag @post.image.thumb.url, alt: "post-image", size: "502" %>
     </div>
     <div class="ramen-post-show-container-2">
       <div class="ramen-post-show-container-2-upper">
@@ -21,6 +21,8 @@
           <div class="post-edit-link">
             <%= link_to "投稿を編集する", edit_post_path(@post) %>
           </div>
+        <% else %>
+          <%= render "users/follow_form" %>
         <% end %>
       </div>
       <hr>
