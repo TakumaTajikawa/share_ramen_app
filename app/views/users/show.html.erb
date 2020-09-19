@@ -54,14 +54,14 @@
         <li class="hide">
           <div class="user-posts user-like-post">
             <h3 class="page-title page-title-users"><hr class="users-show-hr">
-              <%= "食べたい！を押した投稿 #{@posts.count}件" %>
+              <%= "食べたい！を押した投稿 #{@likes.count}件" %>
               <hr class="users-show-hr">
             </h3>
             <div class="user-posts-lower">
-              <% @posts.each do |post| %>
-                <%= link_to post_path(post) do %>
+              <% @likes.each do |like| %>
+                <%= link_to post_path(like.post) do %>
                   <div class="image-container">
-                    <%= image_tag post.image.thumb.url, alt: "post-image", size: "170" %>
+                    <%= image_tag like.post.image.thumb.url, alt: "post-image", size: "170" %>
                   </div>
                 <% end %>
               <% end %>
