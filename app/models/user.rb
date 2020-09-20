@@ -3,9 +3,11 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :comment, dependent: :destroy
   has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship", dependent: :destroy
-   has_many :following, through: :following_relationships
-   has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy
-   has_many :followers, through: :follower_relationships
+  has_many :following, through: :following_relationships
+  has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy
+  has_many :followers, through: :follower_relationships
+  has_many :active_notifications, class_name: "Notification", foreign_key: "visiter_id", dependent: :destroy
+  has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id", dependent: :destroy
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i

@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
   has_many :comment, dependent: :destroy
+  has_many :notifications, dependent: :destroy
   default_scope -> { order(created_at: :desc) }
   validates :store, presence: true, length: { maximum: 16 }
   validates :prefecture, presence: { message: 'を選択してください。' }
@@ -31,7 +32,5 @@ class Post < ApplicationRecord
     likes.where(user_id: user.id).exists?
   end
 
-  # def liked_user
-  #   likes.where(user_id: user.id)
-  # end
+  
 end
