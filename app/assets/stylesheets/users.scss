@@ -54,7 +54,6 @@
 }
 
 .user-posts {
-  margin-top: 40px;
   .user-posts-lower {
     display: flex;
     flex-wrap: wrap;
@@ -354,6 +353,63 @@ table {
   .follow-and-follower-container {
     .page-title {
       font-size: 16px !important;
+    }
+  }
+}
+
+// users/show-tab
+
+.tab-container {
+  padding-top: 30px;
+  .tab {
+    overflow: hidden;
+    padding-left: 0;
+    margin-bottom: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    > .select {
+      background-color: #fafafa;
+      border: 1px solid #e5e5e5;
+      border-bottom: none;
+      color: black;
+      font-weight: bold;
+    }
+    > li {
+      padding: 5px 25px;
+      margin-right: 1px;
+      list-style: none;
+      border: 1px solid #e5e5e5;
+      border-bottom: none;
+      margin: 0 3px;
+      border-radius: 7px 7px 0 0;
+      color: #8e8e8e;
+      width: 280px;
+      background-color: #fff;
+    }
+  }
+
+  > .content {
+    padding-left: 0;
+    margin-bottom: 0;
+    background-color: #fafafa;
+    > li {
+      padding: 0 !important;
+      list-style: none;
+    }
+  }
+  
+  .hide {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .tab-container {
+    .tab > li { 
+    }
+    .tab-li {
+      padding-top: 15px !important;
     }
   }
 }

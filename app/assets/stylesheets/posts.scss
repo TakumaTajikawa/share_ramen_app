@@ -140,6 +140,12 @@
     display: flex;
     margin-bottom: 8px;
     margin-left: 3px;
+    > a {
+      color: black;
+      &:hover {
+        text-decoration: none;
+      }
+    }
     
     .fa-heart {
       color: #ff0202;
@@ -149,8 +155,8 @@
     .likes-count {
       display: inline;
       position: relative;
-      top: 9px;
-      left: 12px;
+      top: 12px;
+      left: 10px;
       font-size: 15px;
     }
   }
@@ -269,7 +275,7 @@
       }
 
       .to-follow {
-        color: #0095f6;
+        color: #831519;
       }
       *:focus {
         outline: none;
@@ -336,6 +342,12 @@
         display: flex;
         margin-bottom: 8px;
         margin-left: 3px;
+        > a {
+          color: black;
+          &:hover {
+            text-decoration: none;
+          }
+        }
         
         .fa-heart {
           color: #ff0202;
@@ -345,8 +357,8 @@
         .likes-count {
           display: inline;
           position: relative;
-          top: 9px;
-          left: 12px;
+          top: 12px;
+          left: 10px;
           font-size: 15px;
         }
       }

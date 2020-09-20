@@ -1,0 +1,42 @@
+<% provide(:title, '食べたいユーザー') %>
+<div id="container">
+  <div class="user-container follow-and-follower-container user-index-container">
+    <h3 class="page-title page-title-users">
+      <%= "食べたい！ユーザー" %>
+      <hr>
+    </h3>
+  <table>
+    <% if @likes.blank? %>
+      <p class="follow-and-follower-blank">食べたい！ ユーザーはいません</p>
+    <% else %>
+      <% @likes.each do |like| %>
+        <tr>
+          <td align="center" class="td-user-icon">
+            <%= link_to like.user do %>
+              <% if like.user.image? %>
+                <%= image_tag like.user.image.thumb.url, size: "50",  class: "user-icon" %>
+              <% else %>
+                <%= image_tag "default.jpg", alt: "user-icon", size: "50", class: "user-icon" %>
+              <% end %>
+            <% end %>
+          </td>
+          <td align="left" class="td-user-name">
+            <%= link_to like.user.name, like.user, class: "index-user-name" %>
+          </td>
+          <td>
+            <% if current_user != like.user %>
+              <div id="follow_form_<%= like.user.id %>">
+                <% if current_user.following?(like.user) %>
+                  <%= render "users/unfollow", user: like.user %>
+                <% else %>
+                  <%= render "users/follow", user: like.user %>
+                <% end %>
+              </div>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+    </table>  
+  </div>
+</div>

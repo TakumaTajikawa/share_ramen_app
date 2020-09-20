@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'relationships/create'
-  get 'relationships/destroy'
   root 'posts#index'
   get :about, to: 'home#about'
   devise_for :users, controllers: {
@@ -18,5 +16,6 @@ Rails.application.routes.draw do
     resource :likes, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
   end
+  get 'posts/:id/likes' => 'posts#likes'
   
 end
