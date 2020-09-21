@@ -19,15 +19,17 @@
     <% end %>
   </div>
   <% if notification.action == "follow" %>
-    <div id="follow_form_<%= notification.visitor %>">
-      <% if current_user.following?(notification.visitor) %>
-        <%= render "users/unfollow", user: notification.visitor %>
-      <% else %>
-        <%= render "users/follow", user: notification.visitor %>
-      <% end %>
+    <div class="follow_form-container">
+      <div id="follow_form_<%= notification.visitor.id %>">
+        <% if current_user.following?(notification.visitor) %>
+          <%= render "users/unfollow", user: notification.visitor %>
+        <% else %>
+          <%= render "users/follow", user: notification.visitor %>
+        <% end %>
+      </div>
     </div>
   <% else %>
-    <%= link_to  post_path(notification) do %>
+    <%= link_to  post_path(notification.post) do %>
       <%= image_tag notification.post.image.url, size: "50",  class: "post-icon" %>
     <% end %>
   <% end %>

@@ -14,16 +14,16 @@
   }
 }
 
-@media (min-width: 992px) {
+@media screen and (min-width: 992px) {
+  .navbar {
+    font-size: 0.8rem;
+  }
   .navbar-expand-lg {
     flex-flow: row nowrap;
     justify-content: flex-start;
   }
-}
-
-@media screen and (min-width: 992px) {
-  .navbar {
-    font-size: 0.8rem;
+  .navbar-brand {
+    margin: 0; 
   }
 }
 
@@ -34,12 +34,6 @@
   }
 }
 
-@media screen and (min-width: 992px) {
-  .navbar-brand {
-    margin: 0; 
-  }
-  
-}
 
 .navbar-toggler {
   padding: 0.25rem 0.75rem;

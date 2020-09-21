@@ -2,12 +2,10 @@
   > .page-title {
     margin-bottom: 0 !important;
   }
-  .following, .to-follow {
-    margin: 0 0 0 5px;
+  .notification-blank {
+    padding-top: 40px;
+    padding-bottom: 460px;
   }
-}
-.notification-blank {
-  padding-bottom: 460px;
 }
 
 .users-notification-index {
@@ -37,6 +35,13 @@
     .elapsed_time {
       color: #8e8e8e;
     }
+    .follow_form-container {
+      padding-top: 10px;
+    }
+    .following, .to-follow {
+      margin: 0 0 0 5px;
+
+    }
     .post-icon {
       margin-left: 12px;
     }
@@ -47,4 +52,25 @@
   width: 470px;
   margin: 0 auto;
   text-align: center;
+}
+
+@media screen and (max-width: 991px) {
+  .notification-list {
+    .user-icon {
+      width: 40px;
+      height: 40px;
+    }
+    .post-icon {
+      width: 40px;
+      height: 40px;
+    }
+    .following {
+      font-size: 10px;
+      padding: 5px 10px;
+    }
+    .to-follow {
+      font-size: 10px;
+      padding: 5px 5px;
+    }
+  }
 }
