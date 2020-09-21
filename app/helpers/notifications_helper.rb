@@ -3,7 +3,7 @@ module NotificationsHelper
   def notification_form(notification)
     @visitor = notification.visitor
     @comment = nil
-    your_post = link_to 'あなたの投稿', post_path(notification.post_id)
+    your_post = link_to 'あなたの投稿', post_path(notification)
     @visitor_comment = notification.comment_id
     #notification.actionがfollowかlikeかcommentか
     case notification.action
