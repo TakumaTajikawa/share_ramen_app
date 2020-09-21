@@ -1,3 +1,47 @@
-// Place all the styles related to the notifications controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.notification-index-container {
+  > .page-title {
+    margin-bottom: 0 !important;
+  }
+}
+.notification-blank {
+  padding-bottom: 460px;
+}
+
+.users-notification-index {
+  text-align: left;
+  font-size: 15px;
+
+  .notification-list {
+    padding: 25px 20px;
+    display: flex;
+    &:hover {
+      background-color: #e8e8e8;
+    }
+    .user-icon {
+      margin: 0 15px 0 0;
+    }
+    > .sentence {
+      > a {
+        color: black;
+        font-weight: bold;
+      }
+    }
+    .comment-notification {
+      margin-bottom: 0;
+      text-align: left;
+      font-size: 14px;
+    }
+    .elapsed_time {
+      color: #8e8e8e;
+    }
+    .post-icon {
+      margin-left: 12px;
+    }
+  }
+}
+
+.notification-hr {
+  width: 470px;
+  margin: 0 auto;
+  text-align: center;
+}

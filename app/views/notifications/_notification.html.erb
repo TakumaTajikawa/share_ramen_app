@@ -1,0 +1,22 @@
+<% visitor = notification.visitor %>
+<% post = notification.post %>
+
+<div class="notification-list">
+  <%= link_to user_path(notification.visitor) do %>
+    <% if notification.visitor.image? %>
+      <%= image_tag notification.visitor.image.thumb.url, size: "50",  class: "user-icon" %>
+    <% else %>
+      <%= image_tag "default.jpg", alt: "user-icon", size: "50", class: "user-icon" %>
+    <% end %>
+  <% end %>
+  <div class="sentence">
+    <%= notification_form(notification) %><span class="elapsed_time"><%= "#{time_ago_in_words(notification.created_at)}前" %></span>
+    <% if !@comment.nil? %>
+      <p class="comment-notification"><%= "「#{@comment}」" %></p>
+    <% end %>
+  </div>
+  <%= link_to  post_path(notification.post.id) do %>
+    <%= image_tag notification.post.image.url, size: "50",  class: "post-icon" %>
+  <% end %>
+</div>
+<hr class="notification-hr">
