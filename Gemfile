@@ -33,6 +33,8 @@ gem 'rmagick'
 
 gem 'data-confirm-modal'
 
+gem 'kaminari'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
