@@ -1,5 +1,4 @@
 <% provide(:title, "通知") %>
-
 <div id="container">
   <div class="user-container user-index-container notification-index-container">
     <% if @notifications.exists? %>
@@ -19,9 +18,12 @@
       </h3>
     <% end %>
     <% if @notifications.exists? %>
+      <% #自分の投稿に対するいいね、コメントは通知に表示しない %>
+      <% @notifications = @notifications.where.not(visitor_id: current_user.id) %>
       <div class="users-notification-index">
         <%= render @notifications %>
       </div>
+      <%= paginate @notifications %>
     <% else %>
       <p class="notification-blank">通知はありません</p>
     <% end %>
