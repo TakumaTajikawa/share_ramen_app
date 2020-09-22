@@ -1,21 +1,44 @@
 .notification-index-container {
-  > .page-title {
+  > .page-title-ntf {
     margin-bottom: 0 !important;
+    position: relative;
+    right: 30px;
+    > hr {
+      position: relative;
+      right: -30px;
+    }
   }
-  .notification-all-destroy-tag {
-    
 
+  .notification-all-destroy-tag {
+    float: left;
+    &:hover {
+      text-decoration: none;
+    }
     .fa-trash {
       color: #8e8e8e;
       font-size: 12px;
       display: inline-block;
       padding-right: 5px;
+      position: relative;
+      top: 18px;
+      left: 16px;
+      z-index: 2;
+      &:hover {
+        color: black;
+      }
     }
     .notification-all-destroy {
       display: inline-block;
       margin-bottom: 0;
       color: #8e8e8e;
       font-size: 12px;
+      position: relative;
+      top: 18px;
+      left: 10px;
+      z-index: 2;
+      &:hover {
+        color: black;
+      }
     }
   }
  
