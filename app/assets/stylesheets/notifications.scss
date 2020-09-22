@@ -1,0 +1,116 @@
+.notification-index-container {
+  > .page-title-ntf {
+    margin-bottom: 0 !important;
+    position: relative;
+    right: 30px;
+    > hr {
+      position: relative;
+      right: -30px;
+    }
+  }
+
+  .notification-all-destroy-tag {
+    float: left;
+    &:hover {
+      text-decoration: none;
+    }
+    .fa-trash {
+      color: #8e8e8e;
+      font-size: 12px;
+      display: inline-block;
+      padding-right: 5px;
+      position: relative;
+      top: 18px;
+      left: 16px;
+      z-index: 2;
+      &:hover {
+        color: black;
+      }
+    }
+    .notification-all-destroy {
+      display: inline-block;
+      margin-bottom: 0;
+      color: #8e8e8e;
+      font-size: 12px;
+      position: relative;
+      top: 18px;
+      left: 10px;
+      z-index: 2;
+      &:hover {
+        color: black;
+      }
+    }
+  }
+ 
+  .notification-blank {
+    padding-top: 40px;
+    padding-bottom: 460px;
+  }
+}
+
+.users-notification-index {
+  text-align: left;
+  font-size: 15px;
+
+  .notification-list {
+    padding: 25px 20px;
+    display: flex;
+    &:hover {
+      background-color: #e8e8e8;
+    }
+    .user-icon {
+      margin: 0 15px 0 0;
+    }
+    > .sentence {
+      > a {
+        color: black;
+        font-weight: bold;
+      }
+    }
+    .comment-notification {
+      margin-bottom: 0;
+      text-align: left;
+      font-size: 14px;
+    }
+    .elapsed_time {
+      color: #8e8e8e;
+    }
+    .follow_form-container {
+      padding-top: 10px;
+    }
+    .following, .to-follow {
+      margin: 0 0 0 5px;
+
+    }
+    .post-icon {
+      margin-left: 12px;
+    }
+  }
+}
+
+.notification-hr {
+  width: 470px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 991px) {
+  .notification-list {
+    .user-icon {
+      width: 40px;
+      height: 40px;
+    }
+    .post-icon {
+      width: 40px;
+      height: 40px;
+    }
+    .following {
+      font-size: 10px;
+      padding: 5px 10px;
+    }
+    .to-follow {
+      font-size: 10px;
+      padding: 5px 5px;
+    }
+  }
+}

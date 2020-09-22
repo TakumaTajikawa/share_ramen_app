@@ -5,8 +5,10 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comment.build(comment_params)
     @comment.user_id = current_user.id
+    @comment_post = @comment.post
     if @comment.save
       flash[:success] = "コメントしました"
+      @comment_post.create_notification_comment!(current_user, @comment.id)
       redirect_back(fallback_location: post_path(@post.id))
     else
       flash[:danger] = "コメントできませんでした"

@@ -7,18 +7,23 @@
   justify-content: space-between;
   padding: 0.5rem 1rem;
   width: 100%;
-}
-
-@media (min-width: 992px) {
-  .navbar-expand-lg {
-    flex-flow: row nowrap;
-    justify-content: flex-start;
+  .fa-circle {
+    position: relative;
+    top: 16px;
+    left: 5px;
   }
 }
 
 @media screen and (min-width: 992px) {
   .navbar {
     font-size: 0.8rem;
+  }
+  .navbar-expand-lg {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
+  .navbar-brand {
+    margin: 0; 
   }
 }
 
@@ -29,12 +34,6 @@
   }
 }
 
-@media screen and (min-width: 992px) {
-  .navbar-brand {
-    margin: 0; 
-  }
-  
-}
 
 .navbar-toggler {
   padding: 0.25rem 0.75rem;
