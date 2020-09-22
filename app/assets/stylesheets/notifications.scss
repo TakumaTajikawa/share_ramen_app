@@ -2,6 +2,23 @@
   > .page-title {
     margin-bottom: 0 !important;
   }
+  .notification-all-destroy-tag {
+    
+
+    .fa-trash {
+      color: #8e8e8e;
+      font-size: 12px;
+      display: inline-block;
+      padding-right: 5px;
+    }
+    .notification-all-destroy {
+      display: inline-block;
+      margin-bottom: 0;
+      color: #8e8e8e;
+      font-size: 12px;
+    }
+  }
+ 
   .notification-blank {
     padding-top: 40px;
     padding-bottom: 460px;

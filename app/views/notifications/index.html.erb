@@ -2,11 +2,18 @@
 
 <div id="container">
   <div class="user-container user-index-container notification-index-container">
+    <% if @notifications.exists? %>
+      <%= link_to destroy_all_notifications_path, method: :delete, data: {confirm: "通知を全て削除します。よろしいですか?", cancel: "やめる", commit: "削除する"}, title: "通知削除確認", class: "notification-all-destroy-tag" do %>
+        <i class="fas fa-trash"></i>
+        <p class="notification-all-destroy">全削除</p>
+      <% end %>
+    <% end %>
     <h3 class="page-title page-title-users">
       通知
       <hr>
     </h3>
     <% if @notifications.exists? %>
+      
       <div class="users-notification-index">
         <%= render @notifications %>
       </div>

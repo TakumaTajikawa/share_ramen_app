@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   end
   get 'posts/:id/likes' => 'posts#likes'
   resources :notifications, only: :index
+  delete 'destroy_all_notifications' => 'notifications#destroy_all'
   
 end
