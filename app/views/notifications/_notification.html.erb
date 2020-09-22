@@ -29,7 +29,7 @@
       </div>
     </div>
   <% else %>
-    <%= link_to  post_path(notification.post) do %>
+    <%= link_to post_path(notification.post) do %>
       <%= image_tag notification.post.image.url, size: "50",  class: "post-icon" %>
     <% end %>
   <% end %>
