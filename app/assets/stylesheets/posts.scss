@@ -225,6 +225,7 @@
   > .page-item {
     > a {
       color: #831519 !important;
+      font-size: 14px !important;
       > .fas {
         color: #831519;
       }
@@ -605,6 +606,10 @@
   }
   .pagination { 
     margin-top: 0;
+    > li > a {
+      padding: 4px 8px !important;
+      font-size: 11px !important;
+    }
   }
   .image-container > img {
     width: 300px;

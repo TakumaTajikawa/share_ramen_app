@@ -22,6 +22,7 @@
       <div class="users-notification-index">
         <%= render @notifications %>
       </div>
+      <%= paginate @notifications %>
     <% else %>
       <p class="notification-blank">通知はありません</p>
     <% end %>
