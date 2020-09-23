@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
   get 'posts/:id/likes' => 'posts#likes'
+  get 'posts/search' => 'posts#search'
   resources :notifications, only: :index
   delete 'destroy_all_notifications' => 'notifications#destroy_all'
   

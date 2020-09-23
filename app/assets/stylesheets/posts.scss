@@ -97,6 +97,11 @@
 
 // posts/index
 
+.search-container {
+  display: block !important;
+  margin: 0 auto !important;
+}
+
 .ramen-posts-container {
   display: flex;
   flex-wrap: wrap;

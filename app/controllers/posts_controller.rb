@@ -58,6 +58,11 @@ class PostsController < ApplicationController
     @likes = Like.where(post_id: @post.id)
   end
 
+  def search
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true).page(params[:page]).per(15)
+  end
+
   
   private
 
@@ -71,6 +76,6 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:store, :prefecture, :genre, :ramen, :impression, :image)
-  end 
+  end
 
 end
