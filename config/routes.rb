@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root 'posts#index'
-  get :about, to: 'home#about'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions',
@@ -17,7 +16,6 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
   get 'posts/:id/likes' => 'posts#likes'
-  get 'posts/search' => 'posts#search'
   resources :notifications, only: :index
   delete 'destroy_all_notifications' => 'notifications#destroy_all'
   

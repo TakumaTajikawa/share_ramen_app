@@ -100,6 +100,60 @@
 .search-container {
   display: block !important;
   margin: 0 auto !important;
+  width: 900px !important;
+  hr {
+    width: 860px;
+  }
+  .form-group {
+    display: inline-block;
+    margin: 0 15px 15px 15px;
+    > .lavel_1, .lavel_2, .lavel_3, .lavel_4 {
+      display: inline-block;
+    }
+    > .search_1, .search_2, .search_3, .search_4 {
+      display: block;
+    }
+    > .search_1 {
+      width: 170px;
+      height: 30px;
+      padding: 0;
+      border: 1px solid black;
+    }
+    > select {
+      width: 170px !important;
+      height: 30px !important;
+      padding: 0;
+      border: 1px solid black;
+      display: block;
+    }
+  }
+  .search-container-lower {
+    display: flex;
+    justify-content: center;
+    input {
+      background-color: #831519;
+      color: #fff;
+      padding: 3px 14px;
+      border: none;
+      border-radius: 3px;
+      &:hover {
+        background-color: #751216;
+      }
+    }
+    a {
+      background-color: #7b7b7b;
+      color: #fff;
+      padding: 7px 10px;
+      border-radius: 3px;
+      position: relative;
+      top: 3px;
+      &:hover {
+        text-decoration: none;
+        background-color: #666666;
+      }
+    }
+  }
+  
 }
 
 .ramen-posts-container {
