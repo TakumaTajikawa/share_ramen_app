@@ -101,6 +101,7 @@
   display: block !important;
   margin: 0 auto !important;
   width: 900px !important;
+  box-shadow: 0 0 12px black !important;
   hr {
     width: 860px;
   }
@@ -171,12 +172,13 @@
   height: auto;
   margin-top: 40px;
   border: 1px solid black;
-  box-shadow: 0 0 8px black;
+  box-shadow: 0 0 12px black;
   border-radius: 5px;
   padding-bottom: 7px;
   &:hover {
-    box-shadow: 0 0 20px black;
-    background-color: #f0f0f0 !important;
+    box-shadow: 0 0 22px black;
+    position: relative;
+    top: -5px;
   }
   > a {
     &:hover {
@@ -193,6 +195,10 @@
     position: relative;
     top: 7px;
     color: black;
+    font-weight: bold;
+  }
+  .store-container {
+    font-weight: bold;
   }
   .likes-upper {
     color: black;

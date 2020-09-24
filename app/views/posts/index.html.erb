@@ -1,4 +1,4 @@
-<div id="containr">
+<div id="posts-index-container">
   <div class="search-container user-container">
     <h3 class="page-title page-title-post-new">ラーメンを検索
       <hr>
@@ -20,7 +20,7 @@
       </div>
       <div class="form-group">
         <%= f.label :sorts, "並び替え", class: "label_4" %>
-        <%= f.select :sorts, [["日付の古い順", "created_at asc"], ["日付の新しい順", "created_at desc"], ["食べたい！の多い順", "liked_user.desc"]], include_blank: "選択して下さい", class: "search_4" %>
+        <%= f.select :sorts, [["日付の古い順", "created_at asc"], ["日付の新しい順", "created_at desc"], ["食べたい！の多い順", "likes_count_desc"]], include_blank: "選択して下さい", class: "search_4" %>
       </div>
       <div class="search-container-lower">
         <div class="form-group">
