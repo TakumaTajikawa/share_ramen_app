@@ -20,7 +20,7 @@
       </div>
       <div class="form-group">
         <%= f.label :sorts, "並び替え", class: "label_4" %>
-        <%= f.select :sorts, [["日付の古い順", "created_at asc"], ["日付の新しい順", "created_at desc"], ["食べたい！の多い順", "likes_count_desc"]], include_blank: "選択して下さい", class: "search_4" %>
+        <%= f.select :sorts, [["日付の古い順", "created_at asc"], ["日付の新しい順", "created_at desc"]], include_blank: "選択して下さい", class: "search_4" %>
       </div>
       <div class="search-container-lower">
         <div class="form-group">
@@ -32,75 +32,79 @@
       </div>
     <% end %>
   </div>
-  <div class="ramen-posts-container">
-    <% @posts.each do |post| %>
-      <div class="ramen-post-container">
-        <%= link_to user_path(post.user) do %>
-          <% if post.user.image? %>
-            <%= image_tag post.user.image.thumb.url, size: "30", class: "user-icon" %>
-          <% else %>
-            <%= image_tag "default.jpg", alt: "user-icon", size: "30", class: "user-icon" %>
-          <% end %>
-          <div class="post-user-name-container">
-            <%= post.user.name %>
-          </div>
-        <% end %>
-        <%= link_to post_path(post) do %>
-          <div class="image-container">
-            <%= image_tag post.image.thumb.url, alt: "post-image", size: "250" %>
-          </div>
-          <div class="store-container">
-            <%= post.store %>
-          </div>
-          <div class="prefecture-container">
-            <%= post.prefecture %>
-          </div>
-        <% end %>
-        <% if user_signed_in? %>
-          <div class="like-comment-container">
-            <div id="likes_buttons_<%= post.id %>">
-              <% if post.liked_by?(current_user) %>
-                <div class="likes">
-                  <div class="likes-upper">
-                    <%= link_to "/posts/#{post.id}/likes" do %>
-                      <i class="fas fa-heart"></i>
-                      <div class="likes-count">
-                        <%= post.likes.count %>
-                      </div>
-                    <% end %>
-                  </div>
-                  <div class="likes-lower">
-                    <%= link_to post_likes_path(post.id), method: :delete, remote: true do %>
-                      <i class="far fa-grin-hearts"></i>
-                      <p class="like like-on">食べたい！</p>
-                    <% end %>
-                  </div>
-                </div>
-              <% else %>
-                <div class="likes">
-                  <div class="likes-upper">
-                    <%= link_to "/posts/#{post.id}/likes" do %>
-                      <i class="fas fa-heart"></i>
-                      <div class="likes-count">
-                        <%= post.likes.count %>
-                      </div>
-                    <% end %>
-                  </div>
-                  <div class="likes-lower">
-                    <%= link_to post_likes_path(post.id), method: :post, remote: true do %>
-                      <i class="far fa-meh"></i>
-                      <p class="like like-off">食べたい！</p>
-                    <% end %>
-                  </div>
-                </div>
-              <% end %>
+  <% if @posts.blank? %>
+    <p class="posts-blank-message">条件に該当するラーメンはありません。</p>
+  <% else %>
+    <div class="ramen-posts-container">
+      <% @posts.each do |post| %>
+        <div class="ramen-post-container">
+          <%= link_to user_path(post.user) do %>
+            <% if post.user.image? %>
+              <%= image_tag post.user.image.thumb.url, size: "30", class: "user-icon" %>
+            <% else %>
+              <%= image_tag "default.jpg", alt: "user-icon", size: "30", class: "user-icon" %>
+            <% end %>
+            <div class="post-user-name-container">
+              <%= post.user.name %>
             </div>
-            <p class="post-index-comment-count"><%= "コメント#{post.comment.count}件" %></p>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+          <% end %>
+          <%= link_to post_path(post) do %>
+            <div class="image-container">
+              <%= image_tag post.image.thumb.url, alt: "post-image", size: "250" %>
+            </div>
+            <div class="store-container">
+              <%= post.store %>
+            </div>
+            <div class="prefecture-container">
+              <%= post.prefecture %>
+            </div>
+          <% end %>
+          <% if user_signed_in? %>
+            <div class="like-comment-container">
+              <div id="likes_buttons_<%= post.id %>">
+                <% if post.liked_by?(current_user) %>
+                  <div class="likes">
+                    <div class="likes-upper">
+                      <%= link_to "/posts/#{post.id}/likes" do %>
+                        <i class="fas fa-heart"></i>
+                        <div class="likes-count">
+                          <%= post.likes.count %>
+                        </div>
+                      <% end %>
+                    </div>
+                    <div class="likes-lower">
+                      <%= link_to post_likes_path(post.id), method: :delete, remote: true do %>
+                        <i class="far fa-grin-hearts"></i>
+                        <p class="like like-on">食べたい！</p>
+                      <% end %>
+                    </div>
+                  </div>
+                <% else %>
+                  <div class="likes">
+                    <div class="likes-upper">
+                      <%= link_to "/posts/#{post.id}/likes" do %>
+                        <i class="fas fa-heart"></i>
+                        <div class="likes-count">
+                          <%= post.likes.count %>
+                        </div>
+                      <% end %>
+                    </div>
+                    <div class="likes-lower">
+                      <%= link_to post_likes_path(post.id), method: :post, remote: true do %>
+                        <i class="far fa-meh"></i>
+                        <p class="like like-off">食べたい！</p>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <p class="post-index-comment-count"><%= "コメント#{post.comment.count}件" %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
   <%= paginate @posts %>
 </div>
 

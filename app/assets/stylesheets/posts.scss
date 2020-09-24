@@ -157,6 +157,12 @@
     }
   }
 }
+
+.posts-blank-message {
+  padding: 190px 0;
+  font-weight: bold;
+  font-size: 21px;
+}
 .ramen-posts-container {
   display: flex;
   flex-wrap: wrap;
@@ -644,7 +650,11 @@
   // posts/index
   .search-container {
     border-radius: 5px !important;
-
+  }
+  .posts-blank-message {
+    padding: 65px 0;
+    font-weight: bold;
+    font-size: 17px;
   }
   .ramen-posts-container {
     width: 375px;
