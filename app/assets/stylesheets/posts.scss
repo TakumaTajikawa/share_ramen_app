@@ -101,7 +101,9 @@
   display: block !important;
   margin: 0 auto !important;
   width: 900px !important;
+  border: 1px solid black;
   box-shadow: 0 0 12px black !important;
+  background-color: #fff;
   hr {
     width: 860px;
   }
@@ -154,9 +156,7 @@
       }
     }
   }
-  
 }
-
 .ramen-posts-container {
   display: flex;
   flex-wrap: wrap;
@@ -642,7 +642,10 @@
   }
 
   // posts/index
+  .search-container {
+    border-radius: 5px !important;
 
+  }
   .ramen-posts-container {
     width: 375px;
     padding-bottom: 30px;
@@ -650,16 +653,12 @@
 
   .ramen-post-container {
     margin: 20px auto;
-    width: 320px;
+    width: 335px;
     height: auto;
-
-    .user-icon {
-      margin-bottom: 13px;
-    }
 
     .post-user-name-container {
       position: relative;
-      top: 1px;
+      top: 6px;
     }
     .likes-upper {
       .fas {
@@ -677,8 +676,8 @@
     }
   }
   .image-container > img {
-    width: 300px;
-    height: 300px;
+    width: 315px;
+    height: 315px;
   }
   // posts/show
 
