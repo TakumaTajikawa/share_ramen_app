@@ -35,6 +35,8 @@ gem 'data-confirm-modal'
 
 gem 'kaminari'
 
+gem 'ransack'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

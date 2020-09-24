@@ -97,6 +97,72 @@
 
 // posts/index
 
+.search-container {
+  display: block !important;
+  margin: 0 auto !important;
+  width: 900px !important;
+  border: 1px solid black;
+  box-shadow: 0 0 12px black !important;
+  background-color: #fff;
+  hr {
+    width: 860px;
+  }
+  .form-group {
+    display: inline-block;
+    margin: 0 15px 15px 15px;
+    > .lavel_1, .lavel_2, .lavel_3, .lavel_4 {
+      display: inline-block;
+    }
+    > .search_1, .search_2, .search_3, .search_4 {
+      display: block;
+    }
+    > .search_1 {
+      width: 170px;
+      height: 30px;
+      padding: 0;
+      border: 1px solid black;
+    }
+    > select {
+      width: 170px !important;
+      height: 30px !important;
+      padding: 0;
+      border: 1px solid black;
+      display: block;
+    }
+  }
+  .search-container-lower {
+    display: flex;
+    justify-content: center;
+    input {
+      background-color: #831519;
+      color: #fff;
+      padding: 3px 14px;
+      border: none;
+      border-radius: 3px;
+      &:hover {
+        background-color: #751216;
+      }
+    }
+    a {
+      background-color: #7b7b7b;
+      color: #fff;
+      padding: 7px 10px;
+      border-radius: 3px;
+      position: relative;
+      top: 3px;
+      &:hover {
+        text-decoration: none;
+        background-color: #666666;
+      }
+    }
+  }
+}
+
+.posts-blank-message {
+  padding: 190px 0;
+  font-weight: bold;
+  font-size: 21px;
+}
 .ramen-posts-container {
   display: flex;
   flex-wrap: wrap;
@@ -112,12 +178,13 @@
   height: auto;
   margin-top: 40px;
   border: 1px solid black;
-  box-shadow: 0 0 8px black;
+  box-shadow: 0 0 12px black;
   border-radius: 5px;
   padding-bottom: 7px;
   &:hover {
-    box-shadow: 0 0 20px black;
-    background-color: #f0f0f0 !important;
+    box-shadow: 0 0 22px black;
+    position: relative;
+    top: -5px;
   }
   > a {
     &:hover {
@@ -134,6 +201,10 @@
     position: relative;
     top: 7px;
     color: black;
+    font-weight: bold;
+  }
+  .store-container {
+    font-weight: bold;
   }
   .likes-upper {
     color: black;
@@ -577,7 +648,14 @@
   }
 
   // posts/index
-
+  .search-container {
+    border-radius: 5px !important;
+  }
+  .posts-blank-message {
+    padding: 65px 0;
+    font-weight: bold;
+    font-size: 17px;
+  }
   .ramen-posts-container {
     width: 375px;
     padding-bottom: 30px;
@@ -585,16 +663,12 @@
 
   .ramen-post-container {
     margin: 20px auto;
-    width: 320px;
+    width: 335px;
     height: auto;
-
-    .user-icon {
-      margin-bottom: 13px;
-    }
 
     .post-user-name-container {
       position: relative;
-      top: 1px;
+      top: 6px;
     }
     .likes-upper {
       .fas {
@@ -612,8 +686,8 @@
     }
   }
   .image-container > img {
-    width: 300px;
-    height: 300px;
+    width: 315px;
+    height: 315px;
   }
   // posts/show
 

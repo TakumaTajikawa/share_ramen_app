@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy, :likes]
   before_action :ensure_correct_user, only: [:edit,:update,:destroy]
 
   def index
-    @posts = Post.all.page(params[:page]).per(15)
-    @post = Post.find_by(id: params[:id])
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true).page(params[:page]).per(15)
   end
 
   def new
@@ -71,6 +71,6 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:store, :prefecture, :genre, :ramen, :impression, :image)
-  end 
+  end
 
 end
