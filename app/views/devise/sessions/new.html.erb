@@ -27,8 +27,9 @@
       <div class="actions">
         <%= f.submit "ログイン", class: "entry-btn" %>
       </div>
-
-      <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
+      <div class="actions">
+        <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "guest-login" %>
+      </div>
     <% end %>
 
     <hr class="hr1">
