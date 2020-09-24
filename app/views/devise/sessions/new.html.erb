@@ -1,7 +1,7 @@
 <% provide(:title, "ログイン") %>
 
 <div id="container">
-  <div class="user-container">
+  <div class="user-container login-container">
     <h3 class="page-title page-title-users">ログイン
       <hr>
     </h3>
@@ -26,6 +26,9 @@
 
       <div class="actions">
         <%= f.submit "ログイン", class: "entry-btn" %>
+      </div>
+      <div class="actions">
+        <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "guest-login" %>
       </div>
     <% end %>
 

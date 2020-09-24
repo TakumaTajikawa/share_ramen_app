@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.login-container {
+  padding-bottom: 25px !important;
+}
+
 .field {
   margin-top: 30px;
 }
@@ -16,6 +20,19 @@
 .actions {
   margin-top: 30px;
   margin-bottom: 30px;
+
+  .guest-login {
+    background-color: #831519;
+    padding: 10px 84px;
+    color: #fff;
+    border: 1px solid #A9A9A9;
+    font-weight: bold;
+    border-radius: 5px;
+    &:hover {
+      text-decoration: none;
+      background-color: #630e11;
+    }
+  }
 }
 
 .page-title {
@@ -28,13 +45,13 @@
   margin-top: 25px;
   width: 360px;
   height: 35px;
-  background-color: #3ECDC6;
+  background-color: #185fee;
   color: #fff;
   font-weight: bold;
   border-radius: 5px;
   border: 1px solid #A9A9A9;
   &:hover {
-    background-color: #2caaa3;
+    background-color: #104cc4;
   }
 }
 
@@ -72,6 +89,9 @@
     .entry-btn {
       width: 300px;
       margin-top: 25px;
+    }
+    .guest-login {
+      padding: 9px 54px;
     }
   }
 }
