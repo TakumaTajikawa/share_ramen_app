@@ -49,6 +49,9 @@
         <div id="likes_buttons_<%= @post.id %>">
           <%= render partial: 'likes/like', locals: { post: @post } %>
         </div>
+        <div class="post-create-time">
+          <%= "#{time_ago_in_words(@post.created_at)}前に投稿" %>
+        </div>
       </div>
     </div>
     <div class="ramen-post-show-container-3">
