@@ -15,6 +15,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, length: { maximum: 50 }
   validates :introduction, presence: false, length: { maximum: 200 } 
   mount_uploader :image, ImageUploader
+  default_scope -> { order(created_at: :desc) }
   
 
   def following?(user)
