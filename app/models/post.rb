@@ -6,11 +6,11 @@ class Post < ApplicationRecord
   has_many :notifications, dependent: :destroy
   default_scope -> { order(created_at: :desc) }
   validates :store, presence: true, length: { maximum: 16 }
-  validates :prefecture, presence: { message: 'を選択してください。' }
-  validates :genre, presence: { message: 'を選択してください。' }
+  validates :prefecture, presence: { message: 'を選択してください' }
+  validates :genre, presence: { message: 'を選択してください' }
   validates :ramen, presence: true, length: { maximum: 16 }
   validates :impression, presence: true, length: { maximum: 110 }
-  validates :image, presence: { message: 'をアップロードしてください。' }
+  validates :image, presence: { message: 'をアップロードしてください' }
   mount_uploader :image, ImageUploader
 
   enum prefecture: {

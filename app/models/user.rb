@@ -11,7 +11,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
-  validates :name, presence: true, length: { maximum: 20 }
+  validates :name, presence: true, length: { maximum: 15 }
   validates :email, presence: true, uniqueness: true, length: { maximum: 50 }
   validates :introduction, presence: false, length: { maximum: 200 } 
   mount_uploader :image, ImageUploader
@@ -51,4 +51,9 @@ class User < ApplicationRecord
       # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
     end
   end
+
+  private
+    def downcase_email
+      self.email = email.downcase
+    end
 end
