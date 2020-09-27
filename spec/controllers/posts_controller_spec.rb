@@ -282,4 +282,46 @@ RSpec.describe PostsController, type: :controller do
       end 
     end
   end
+
+  describe "#likes" do
+
+    context "ログインしているユーザーとして" do
+
+      before do
+        @user = FactoryBot.create(:user)
+        @post = FactoryBot.create(:post)
+      end
+
+      it "正常にレスポンスを返すこと" do
+        sign_in @user
+        get :likes, params: { id: @post.id }
+        expect(response).to be_successful
+      end 
+
+      it "200のレスポンスを返すこと" do
+        sign_in @user
+        get :likes, params: { id: @post.id }
+        expect(response).to have_http_status "200"
+      end
+    end
+
+    context "ログインしていないユーザーとして" do
+
+      before do
+        @post = FactoryBot.create(:post)
+      end
+
+      it "302のレスポンスを返すこと" do
+        post :likes, params: { id: @post.id }
+        expect(response).to have_http_status "302"
+      end
+
+      it "ログインページにリダイレクトすること" do
+        get :likes, params: { id: @post.id }
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
+  end
+
+
 end
