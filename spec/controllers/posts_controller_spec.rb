@@ -132,7 +132,7 @@ RSpec.describe PostsController, type: :controller do
       end
 
       it "302のレスポンスを返すこと" do
-        post :show, params: { id: @post.id }
+        get :show, params: { id: @post.id }
         expect(response).to have_http_status "302"
       end
 
@@ -193,8 +193,7 @@ RSpec.describe PostsController, type: :controller do
       end
 
       it "302のレスポンスを返すこと" do
-        post_params = FactoryBot.attributes_for(:post)
-        post :create, params: { post: post_params }
+        get :edit, params: { id: @post.id }
         expect(response).to have_http_status "302"
       end
 
