@@ -108,9 +108,10 @@ RSpec.describe PostsController, type: :controller do
       end
     end
   end
+
   describe "#update" do
 
-    context "ログインしているユーザーとして" do
+    context "ポストの投稿者でログイン状態として" do
       
       before do
         @user = FactoryBot.create(:user)
@@ -163,6 +164,63 @@ RSpec.describe PostsController, type: :controller do
         post_params = FactoryBot.attributes_for(:post)
         patch :update, params: { id: @post.id, post: post_params }
         expect(response).to redirect_to new_user_session_path
+      end 
+    end
+  end
+
+  describe "#destroy" do
+
+    context "ポストの投稿者でログイン状態として" do
+      
+      before do
+        @user = FactoryBot.create(:user)
+        @post = FactoryBot.create(:post, user: @user)
+      end
+
+      it "投稿を削除できること" do
+        sign_in @user
+        expect { delete :destroy, params: { id: @post.id } }.to change(@user.posts, :count).by(-1)
+      end 
+    end
+
+    context "ポストの投稿者ではないログインユーザーとして" do
+
+      before do
+        @user = FactoryBot.create(:user)
+        other_user = FactoryBot.create(:user)
+        @post = FactoryBot.create(:post, user: other_user)
+      end
+
+      it "投稿を削除できないこと" do
+        sign_in @user
+        expect { delete :destroy, params: { id: @post.id } }.to_not change(Post, :count)
+      end
+
+      it "投稿一覧ページへリダイレクトすること" do
+        sign_in @user
+        delete :destroy, params: { id: @post.id }
+        expect(response).to redirect_to root_path
+      end 
+    end
+
+    context "ログインしていないユーザーとして" do
+
+      before do
+        @post = FactoryBot.create(:post)
+      end
+
+      it "302のレスポンスを返すこと" do
+        delete :destroy, params: { id: @post.id }
+        expect(response).to have_http_status "302"
+      end
+
+      it "ログインページにリダイレクトすること" do
+        delete :destroy, params: { id: @post.id }
+        expect(response).to redirect_to new_user_session_path
+      end
+
+      it "投稿を削除できないこと" do
+        expect { delete :destroy, params: { id: @post.id } }.to_not change(Post, :count)
       end 
     end
   end
