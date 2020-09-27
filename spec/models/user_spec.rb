@@ -56,6 +56,12 @@ RSpec.describe User, type: :model do
       expect(user.errors[:email]).to include("はすでに存在します")
     end
 
+    it "メールアドレスに@がないと無効な状態であること" do
+      user = FactoryBot.build(:user, email: "a" * 20)
+      user.valid?
+      expect(user.errors[:email]).to include("が間違っています")
+    end
+
     it "パスワードがなければ無効な状態であること" do
       user = FactoryBot.build(:user, password: nil)
       user.valid?
