@@ -37,42 +37,36 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  describe "#show" do
+  describe "#new" do
 
     context "ログインしているユーザーとして" do
 
       before do
         @user = FactoryBot.create(:user)
-        @post = FactoryBot.create(:post)
       end
 
       it "正常にレスポンスを返すこと" do
         sign_in @user
-        get :show, params: { id: @post.id }
+        get :new
         expect(response).to be_successful
       end 
 
       it "200のレスポンスを返すこと" do
         sign_in @user
-        get :show, params: { id: @post.id }
+        get :new
         expect(response).to have_http_status "200"
       end
     end
 
     context "ログインしていないユーザーとして" do
 
-      before do
-        @post = FactoryBot.create(:post)
-      end
-
       it "302のレスポンスを返すこと" do
-        post_params = FactoryBot.attributes_for(:post)
-        post :create, params: { post: post_params }
+        post :new
         expect(response).to have_http_status "302"
       end
 
       it "ログインページにリダイレクトすること" do
-        get :show, params: { id: @post.id }
+        get :new
         expect(response).to redirect_to new_user_session_path
       end
     end
@@ -109,6 +103,69 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
+  describe "#edit" do
+
+    context "ポストの投稿者でログイン状態として" do
+
+      before do
+        @user = FactoryBot.create(:user)
+        @post = FactoryBot.create(:post, user: @user)
+      end
+
+      it "正常にレスポンスを返すこと" do
+        sign_in @user
+        get :edit, params: { id: @post.id }
+        expect(response).to be_successful
+      end 
+
+      it "200のレスポンスを返すこと" do
+        sign_in @user
+        get :edit, params: { id: @post.id }
+        expect(response).to have_http_status "200"
+      end
+    end
+
+    context "ポストの投稿者ではないログインユーザーとして" do
+
+      before do
+        @user = FactoryBot.create(:user)
+        other_user = FactoryBot.create(:user)
+        @post = FactoryBot.create(:post, user: other_user)
+      end
+
+      it "302のレスポンスを返すこと" do
+        sign_in @user
+        get :edit, params: { id: @post.id }
+        expect(response).to have_http_status "302"
+      end
+
+      it "投稿一覧ページにリダイレクトすること" do
+        sign_in @user
+        get :edit, params: { id: @post.id }
+        expect(response).to redirect_to root_path
+      end
+    end
+
+    context "ログインしていないユーザーとして" do
+
+      before do
+        @post = FactoryBot.create(:post)
+      end
+
+      it "302のレスポンスを返すこと" do
+        post_params = FactoryBot.attributes_for(:post)
+        post :create, params: { post: post_params }
+        expect(response).to have_http_status "302"
+      end
+
+      it "ログインページにリダイレクトすること" do
+        get :edit, params: { id: @post.id }
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
+  end
+
+
   describe "#update" do
 
     context "ポストの投稿者でログイン状態として" do
@@ -131,7 +188,7 @@ RSpec.describe PostsController, type: :controller do
       before do
         @user = FactoryBot.create(:user)
         other_user = FactoryBot.create(:user)
-        @post = FactoryBot.create(:post, user: other_user, impression: "美味しかったです")
+        @post = FactoryBot.create(:post, user: other_user, impression: "美味しかったです" )
       end
 
       it "投稿を更新できないこと" do
@@ -148,6 +205,7 @@ RSpec.describe PostsController, type: :controller do
         expect(response).to redirect_to root_path
       end 
     end
+
     context "ログインしていないユーザーとして" do
       
       before do
