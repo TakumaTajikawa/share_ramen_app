@@ -16,4 +16,13 @@ RSpec.describe LikesController, type: :controller do
       expect(response.content_type).to eq "application/json; charset=utf-8"
     end
   end
+
+  describe "destroy" do
+
+    it "JSON 形式でレスポンスを返すこと" do
+      delete :destroy, format: :json,
+      params: { post_id: @post.id, id: @like.id }
+      expect(response.content_type).to eq "application/json; charset=utf-8"
+    end
+  end
 end
