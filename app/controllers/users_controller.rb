@@ -59,10 +59,5 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :image, :introduction)
   end
 
-
-  def set_post
-    @post = Post.find(params[:id])
-  end
-
 end
 
