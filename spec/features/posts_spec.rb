@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Posts", type: :feature do
 
-  scenario "ユーザーはポストを作成できること" do
+  scenario "ユーザーはログインでき、ポストを作成できること" do
     user = FactoryBot.create(:user)
     visit root_path
     click_link "ログイン"
@@ -17,12 +17,8 @@ RSpec.feature "Posts", type: :feature do
       select "つけ麺", from: "ジャンル"
       fill_in "ramen", with: "つけ麺大盛り"
       fill_in "impression", with: "美味しかったです"
-      attach_file "image", Rails.root.join('share_ramen_app/public/uploads/post/image/451/test.jpg') 
+      attach_file "post[image]", "#{Rails.root}/public/uploads/test_image/test.jpg"
       click_button "投稿"
-
-      expect(page).to have_content "投稿しました"
-      # expect(page).to have_content "Test Project"
-      # expect(page).to have_content "User: #{user.name}"
     }.to change(user.posts, :count).by(1)
   end
 end
