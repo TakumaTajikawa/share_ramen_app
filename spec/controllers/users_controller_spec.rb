@@ -198,7 +198,7 @@ RSpec.describe UsersController, type: :controller do
     context "ユーザー本人がログイン状態として" do
       
       let(:user) { FactoryBot.create(:user) }
-
+      
       it "アカウントを削除できること" do
         sign_in user
         expect { delete :destroy, params: { id: user.id } }.to change { User.count }.by(-1)
@@ -243,6 +243,19 @@ RSpec.describe UsersController, type: :controller do
       it "他人のアカウントを削除できないこと" do
         expect { delete :destroy, params: { id: @user.id } }.to_not change(User, :count)
       end 
+    end
+
+    context "投稿が紐づくユーザーを削除した場合" do
+
+      before do
+        @user = FactoryBot.create(:user)
+        @post = FactoryBot.create(:post, user: @user)
+      end
+
+      it "ユーザーと同時に紐づく投稿も削除される" do
+        sign_in @user
+        expect { delete :destroy, params: { id: @user.id } }.to change(Post, :count).by(-1)
+      end
     end
   end
 end
