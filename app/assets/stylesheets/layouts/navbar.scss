@@ -86,10 +86,18 @@
     top: 33px;
     font-size: 18px;
   }
-
   .nav-link {
     position: relative;
     left: 25px;
+  }
+  .fa-circle {
+    position: relative !important;
+    top: 31px !important;
+    padding-right: 3px;
+  }
+  .nlfb {
+    position: relative;
+    left: 43px;
   }
 }
 

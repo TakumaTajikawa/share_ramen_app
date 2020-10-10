@@ -12,10 +12,10 @@
     },
     "flash": {
       "js": [
-        "/packs/js/flash-c1c9ac91ccb41be9123b.js"
+        "/packs/js/flash-8e9a336d6c877e3377ec.js"
       ],
       "js.map": [
-        "/packs/js/flash-c1c9ac91ccb41be9123b.js.map"
+        "/packs/js/flash-8e9a336d6c877e3377ec.js.map"
       ]
     },
     "posts": {
@@ -43,8 +43,8 @@
       ]
     }
   },
-  "flash.js": "/packs/js/flash-c1c9ac91ccb41be9123b.js",
-  "flash.js.map": "/packs/js/flash-c1c9ac91ccb41be9123b.js.map",
+  "flash.js": "/packs/js/flash-8e9a336d6c877e3377ec.js",
+  "flash.js.map": "/packs/js/flash-8e9a336d6c877e3377ec.js.map",
   "posts.js": "/packs/js/posts-b903896340d04af343ca.js",
   "posts.js.map": "/packs/js/posts-b903896340d04af343ca.js.map",
   "users.js": "/packs/js/users-144ac650c443b1dc0015.js",
