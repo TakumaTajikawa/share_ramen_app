@@ -1,3 +1,3 @@
 $(function(){
-  setTimeout("$('.flash').fadeOut('slow')", 2000);
+  setTimeout("$('.alert').fadeOut('slow')", 2000);
 });
