@@ -100,7 +100,7 @@
 .search-container {
   display: block !important;
   margin: 0 auto !important;
-  width: 900px !important;
+  width: 870px !important;
   border: 1px solid black;
   box-shadow: 0 0 12px black !important;
   background-color: #fff;
@@ -168,7 +168,7 @@
   flex-wrap: wrap;
   width: 900px;
   margin: 0 auto;
-  justify-content: space-between;
+  justify-content: start;
   padding-bottom: 20px;
 }
 
@@ -176,11 +176,11 @@
   background-color: #fff;
   width: 270px;
   height: auto;
-  margin-top: 40px;
   border: 1px solid black;
   box-shadow: 0 0 12px black;
   border-radius: 5px;
   padding-bottom: 7px;
+  margin: 40px 15px 0 15px;
   &:hover {
     box-shadow: 0 0 22px black;
     position: relative;
@@ -316,7 +316,7 @@
 
 @media screen and (min-width: 992px) {
   .container-post-show {
-    padding: 70px 0;
+    padding: 90px 0 110px 0;
   }
 
   .ramen-post-show-container {
@@ -578,7 +578,7 @@
       .fa-trash {
         color: #8e8e8e;
         display: block;
-        font-size: 3px;
+        font-size: 12px;
         position: static;
       }
     }
