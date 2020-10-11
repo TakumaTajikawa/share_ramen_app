@@ -1,11 +1,9 @@
 require 'rails_helper'
 
 RSpec.feature "Users", type: :feature do
-
   scenario "未登録ユーザーがアカウント登録できること" do
-
     visit root_path
-    
+
     expect {
       click_link "新規登録"
       fill_in "ユーザー名", with: "山田太郎"
