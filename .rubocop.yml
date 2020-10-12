@@ -18,6 +18,7 @@ AllCops:
     - 'vendor/**/*'
     - 'path/ruby'
     - 'node_modules/**/**/**/**/**'
+    - 'app/uploaders/**'
 
 Style/TrailingCommaInHashLiteral:
   Enabled: false

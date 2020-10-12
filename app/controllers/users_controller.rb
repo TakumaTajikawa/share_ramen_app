@@ -45,7 +45,6 @@ class UsersController < ApplicationController
     @users = @user.followers.all
   end
 
-
   private
 
   def ensure_correct_user

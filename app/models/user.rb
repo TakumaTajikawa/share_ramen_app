@@ -13,10 +13,9 @@ class User < ApplicationRecord
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
   validates :name, presence: true, length: { maximum: 15 }
   validates :email, presence: true, uniqueness: true, length: { maximum: 50 }
-  validates :introduction, presence: false, length: { maximum: 200 } 
+  validates :introduction, presence: false, length: { maximum: 200 }
   mount_uploader :image, ImageUploader
   default_scope -> { order(created_at: :desc) }
-  
 
   def following?(user)
     following_relationships.find_by(following_id: user.id)
@@ -35,7 +34,9 @@ class User < ApplicationRecord
   end
 
   def create_notification_following!(current_user)
-    temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ", current_user.id, id, 'follow'])
+    temp = Notification.where(
+      ["visitor_id = ? and visited_id = ? and action = ? ", current_user.id, id, 'follow']
+    )
     if temp.blank?
       notification = current_user.active_notifications.new(
         visited_id: id,
@@ -53,7 +54,8 @@ class User < ApplicationRecord
   end
 
   private
-    def downcase_email
-      self.email = email.downcase
-    end
+
+  def downcase_email
+    self.email = email.downcase
+  end
 end
