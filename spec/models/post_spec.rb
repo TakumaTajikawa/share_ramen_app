@@ -1,20 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-
   describe Post do
     it "有効なファクトリを持つこと" do
       expect(FactoryBot.build(:post)).to be_valid
     end
   end
-  
+
   context "バリデーション" do
-    
     it "店名、都道府県、ジャンル、品名、感想、画像があればポストが有効な状態であること" do
       post = FactoryBot.create(:post)
       expect(post).to be_valid
     end
-  
+
     it "店名がなければ無効な状態であること" do
       post = FactoryBot.build(:post, store: nil)
       post.valid?
@@ -37,7 +35,7 @@ RSpec.describe Post, type: :model do
       post.valid?
       expect(post.errors[:prefecture]).to include("を選択してください")
     end
-  
+
     it "ジャンルがなければ無効な状態であること" do
       post = FactoryBot.build(:post, genre: nil)
       post.valid?
@@ -60,7 +58,7 @@ RSpec.describe Post, type: :model do
       post.valid?
       expect(post.errors[:ramen]).to include("は16文字以内で入力してください")
     end
-  
+
     it "感想がなければ無効な状態であること" do
       post = FactoryBot.build(:post, impression: nil)
       post.valid?

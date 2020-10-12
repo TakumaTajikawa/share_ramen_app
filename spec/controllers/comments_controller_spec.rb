@@ -1,11 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe CommentsController, type: :controller do
-
   describe "#create" do
-
     context "ログインしているユーザーとして" do
-
       let(:user) { FactoryBot.create(:user) }
       let(:post) { FactoryBot.create(:post) }
 
@@ -17,9 +14,7 @@ RSpec.describe CommentsController, type: :controller do
   end
 
   describe "#destroy" do
-
     context "コメント投稿者のログインユーザーとして" do
-
       before do
         @user = FactoryBot.create(:user)
         @post = FactoryBot.create(:post, user: @user)
@@ -33,7 +28,6 @@ RSpec.describe CommentsController, type: :controller do
     end
 
     context "ポスト投稿者がログインユーザーとして" do
-
       before do
         @user = FactoryBot.create(:user)
         @other_user = FactoryBot.create(:user)

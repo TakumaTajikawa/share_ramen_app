@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :show, :edit, :update, :destroy]
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
-  
+
   def index
     @users = User.all
   end
@@ -45,7 +45,6 @@ class UsersController < ApplicationController
     @users = @user.followers.all
   end
 
-  
   private
 
   def ensure_correct_user
@@ -54,10 +53,8 @@ class UsersController < ApplicationController
       redirect_to root_path
     end
   end
-  
+
   def user_params
     params.require(:user).permit(:name, :email, :image, :introduction)
   end
-
 end
-

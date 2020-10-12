@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy, :likes]
-  before_action :ensure_correct_user, only: [:edit,:update,:destroy]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
     @q = Post.ransack(params[:q])
@@ -58,7 +58,6 @@ class PostsController < ApplicationController
     @likes = Like.where(post_id: @post.id)
   end
 
-  
   private
 
   def ensure_correct_user
@@ -72,5 +71,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:store, :prefecture, :genre, :ramen, :impression, :image)
   end
-
 end

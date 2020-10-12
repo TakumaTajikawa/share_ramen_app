@@ -13,8 +13,8 @@ class CommentsController < ApplicationController
     else
       flash[:danger] = "コメントできませんでした"
       redirect_back(fallback_location: post_path(@post.id))
-    end 
-  end 
+    end
+  end
 
   def destroy
     @post = Post.find(params[:post_id])
@@ -22,11 +22,11 @@ class CommentsController < ApplicationController
     @comment.destroy
     flash[:success] = "コメントを削除しました"
     redirect_back(fallback_location: post_path(@post.id))
-  end 
+  end
 
   private
+
   def comment_params
     params.require(:comment).permit(:content)
   end
-
 end

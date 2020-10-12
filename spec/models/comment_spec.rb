@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-
   let(:user) { FactoryBot.create(:user) }
   let(:post) { FactoryBot.create(:post) }
   let(:comment) { FactoryBot.create(:comment) }
@@ -29,7 +28,6 @@ RSpec.describe Comment, type: :model do
     expect(comment).to be_invalid
   end
 
-  
   it "コメントが250文字以内なら有効であること" do
     comment.content = 'a' * 250
     expect(comment).to be_valid

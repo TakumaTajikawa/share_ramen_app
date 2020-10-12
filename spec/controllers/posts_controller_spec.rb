@@ -1,11 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-
   describe "#index" do
-
     context "ログインしているユーザーとして" do
-
       let(:user) { FactoryBot.create(:user) }
 
       it "正常にレスポンスを返すこと" do
@@ -13,7 +10,7 @@ RSpec.describe PostsController, type: :controller do
         get :index
         expect(response).to be_successful
       end
-  
+
       it "200のレスポンスを返すこと" do
         sign_in user
         get :index
@@ -22,12 +19,11 @@ RSpec.describe PostsController, type: :controller do
     end
 
     context "ログインしていないユーザーとして" do
-
       it "正常にレスポンスを返すこと" do
         get :index
         expect(response).to be_successful
       end
-  
+
       it "200のレスポンスを返すこと" do
         get :index
         expect(response).to have_http_status "200"
@@ -36,16 +32,14 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "#new" do
-
     context "ログインしているユーザーとして" do
-
       let(:user) { FactoryBot.create(:user) }
 
       it "正常にレスポンスを返すこと" do
         sign_in user
         get :new
         expect(response).to be_successful
-      end 
+      end
 
       it "200のレスポンスを返すこと" do
         sign_in user
@@ -55,7 +49,6 @@ RSpec.describe PostsController, type: :controller do
     end
 
     context "ログインしていないユーザーとして" do
-
       it "302のレスポンスを返すこと" do
         post :new
         expect(response).to have_http_status "302"
@@ -69,20 +62,17 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "#create" do
-
     context "ログインしているユーザーとして" do
-
       let(:user) { FactoryBot.create(:user) }
 
       it "投稿を作成できること" do
-        post_params = FactoryBot.attributes_for(:post) 
+        post_params = FactoryBot.attributes_for(:post)
         sign_in user
-        expect { post :create, params: { post: post_params }}.to change(user.posts, :count).by(1)
+        expect { post :create, params: { post: post_params } }.to change(user.posts, :count).by(1)
       end
     end
 
     context "ログインしていないユーザーとして" do
-      
       it "302のレスポンスを返すこと" do
         post_params = FactoryBot.attributes_for(:post)
         post :create, params: { post: post_params }
@@ -98,9 +88,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "#show" do
-
     context "ログインしているユーザーとして" do
-
       let(:user) { FactoryBot.create(:user) }
       let(:post) { FactoryBot.create(:post, user: user) }
 
@@ -108,7 +96,7 @@ RSpec.describe PostsController, type: :controller do
         sign_in user
         get :show, params: { id: post.id }
         expect(response).to be_successful
-      end 
+      end
 
       it "200のレスポンスを返すこと" do
         sign_in user
@@ -118,7 +106,6 @@ RSpec.describe PostsController, type: :controller do
     end
 
     context "ログインしていないユーザーとして" do
-
       let(:post) { FactoryBot.create(:post) }
 
       it "302のレスポンスを返すこと" do
@@ -134,9 +121,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "#edit" do
-
     context "ポストの投稿者でログイン状態として" do
-
       let(:user) { FactoryBot.create(:user) }
       let(:post) { FactoryBot.create(:post, user: user) }
 
@@ -144,7 +129,7 @@ RSpec.describe PostsController, type: :controller do
         sign_in user
         get :edit, params: { id: post.id }
         expect(response).to be_successful
-      end 
+      end
 
       it "200のレスポンスを返すこと" do
         sign_in user
@@ -154,7 +139,6 @@ RSpec.describe PostsController, type: :controller do
     end
 
     context "ポストの投稿者ではないログインユーザーとして" do
-
       let(:user) { FactoryBot.create(:user) }
       let(:other_user) { FactoryBot.create(:user) }
       let(:post) { FactoryBot.create(:post, user: other_user) }
@@ -173,7 +157,6 @@ RSpec.describe PostsController, type: :controller do
     end
 
     context "ログインしていないユーザーとして" do
-
       let(:post) { FactoryBot.create(:post) }
 
       it "302のレスポンスを返すこと" do
@@ -188,11 +171,8 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-
   describe "#update" do
-
     context "ポストの投稿者でログイン状態として" do
-      
       let(:user) { FactoryBot.create(:user) }
       let(:post) { FactoryBot.create(:post, user: user) }
 
@@ -201,11 +181,10 @@ RSpec.describe PostsController, type: :controller do
         sign_in user
         patch :update, params: { id: post.id, post: post_params }
         expect(post.reload.impression).to eq "とても美味しかったです"
-      end 
+      end
     end
 
     context "ポストの投稿者ではないログインユーザーとして" do
-
       let(:user) { FactoryBot.create(:user) }
       let(:other_user) { FactoryBot.create(:user) }
       let(:post) { FactoryBot.create(:post, user: other_user) }
@@ -222,11 +201,10 @@ RSpec.describe PostsController, type: :controller do
         sign_in user
         patch :update, params: { id: post.id, post: post_params }
         expect(response).to redirect_to root_path
-      end 
+      end
     end
 
     context "ログインしていないユーザーとして" do
-      
       let(:post) { FactoryBot.create(:post) }
 
       it "302のレスポンスを返すこと" do
@@ -239,14 +217,12 @@ RSpec.describe PostsController, type: :controller do
         post_params = FactoryBot.attributes_for(:post)
         patch :update, params: { id: post.id, post: post_params }
         expect(response).to redirect_to new_user_session_path
-      end 
+      end
     end
   end
 
   describe "#destroy" do
-
     context "ポストの投稿者でログイン状態として" do
-      
       before do
         @user = FactoryBot.create(:user)
         @post = FactoryBot.create(:post, user: @user)
@@ -255,11 +231,10 @@ RSpec.describe PostsController, type: :controller do
       it "投稿を削除できること" do
         sign_in @user
         expect { delete :destroy, params: { id: @post.id } }.to change(@user.posts, :count).by(-1)
-      end 
+      end
     end
 
     context "ポストの投稿者ではないログインユーザーとして" do
-
       before do
         @user = FactoryBot.create(:user)
         @other_user = FactoryBot.create(:user)
@@ -268,18 +243,17 @@ RSpec.describe PostsController, type: :controller do
 
       it "投稿を削除できないこと" do
         sign_in @user
-        expect { delete :destroy, params: { id: @post.id } }.to_not change(Post, :count)
+        expect { delete :destroy, params: { id: @post.id } }.not_to change(Post, :count)
       end
 
       it "投稿一覧ページへリダイレクトすること" do
         sign_in @user
         delete :destroy, params: { id: @post.id }
         expect(response).to redirect_to root_path
-      end 
+      end
     end
 
     context "ログインしていないユーザーとして" do
-
       before do
         @post = FactoryBot.create(:post)
       end
@@ -295,15 +269,13 @@ RSpec.describe PostsController, type: :controller do
       end
 
       it "投稿を削除できないこと" do
-        expect { delete :destroy, params: { id: @post.id } }.to_not change(Post, :count)
-      end 
+        expect { delete :destroy, params: { id: @post.id } }.not_to change(Post, :count)
+      end
     end
   end
 
   describe "#likes" do
-
     context "ログインしているユーザーとして" do
-
       let(:user) { FactoryBot.create(:user) }
       let(:post) { FactoryBot.create(:post, user: user) }
 
@@ -311,7 +283,7 @@ RSpec.describe PostsController, type: :controller do
         sign_in user
         get :likes, params: { id: post.id }
         expect(response).to be_successful
-      end 
+      end
 
       it "200のレスポンスを返すこと" do
         sign_in user
@@ -321,7 +293,6 @@ RSpec.describe PostsController, type: :controller do
     end
 
     context "ログインしていないユーザーとして" do
-
       before do
         @post = FactoryBot.create(:post)
       end
