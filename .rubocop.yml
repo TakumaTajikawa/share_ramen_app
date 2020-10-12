@@ -9,7 +9,7 @@ AllCops:
     - 'bin/**'
     - 'db/**/*'
     - 'vendor/**/**/*'
-    - 'spec/*'
+    - 'spec/**/**'
     - 'config/environments/*'
     - 'config/application.rb'
     - 'config/initializers/*'
@@ -17,6 +17,7 @@ AllCops:
     - 'lib/tasks/*'
     - 'vendor/**/*'
     - 'path/ruby'
+    - 'node_modules/**/**/**/**/**'
 
 Style/TrailingCommaInHashLiteral:
   Enabled: false
