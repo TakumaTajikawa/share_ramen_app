@@ -21,9 +21,10 @@ https://www.share-ramen-app.com
 
 # 使用技術
 ### フロントエンド
-- HTML5  
-- SCSS  
-- JavaScript(JQuery)  
+- HTML 
+- Sass  
+- JavaScript
+- JQuery
 - Bootstrap  
 ### バックエンド
 - Ruby 2.6.5 
