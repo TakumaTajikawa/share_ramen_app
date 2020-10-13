@@ -36,9 +36,9 @@ https://www.share-ramen-app.com
 - Nginx 
 - Unicorn  
 ### その他
- - Rspec(単体・結合テスト)  
- - Rubocop-airbnb(リンター)  
- - AWS・ACMにてSSL証明書を発行しSSL化   
+- Rspec(単体・結合テスト)  
+- Rubocop-airbnb(リンター)  
+- AWS・ACMにてSSL証明書を発行しSSL化   
 
 
 # 機能一覧
