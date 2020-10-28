@@ -314,6 +314,10 @@
 
 // posts/show
 
+.likes-lower-no-sign {
+  display: none !important;
+}
+
 @media screen and (min-width: 992px) {
   .container-post-show {
     padding: 90px 0 110px 0;
