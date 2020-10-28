@@ -19,6 +19,7 @@ gem 'data-confirm-modal'
 gem 'kaminari'
 gem 'ransack'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'rack-mini-profiler', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
