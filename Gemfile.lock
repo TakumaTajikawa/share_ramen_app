@@ -111,6 +111,7 @@ GEM
     jaro_winkler (1.5.4)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
+    jp_prefecture (0.10.0)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.1)
@@ -307,6 +308,7 @@ DEPENDENCIES
   devise-i18n
   factory_bot_rails
   jbuilder (~> 2.7)
+  jp_prefecture
   kaminari
   listen (~> 3.2)
   mysql2 (>= 0.4.4)
