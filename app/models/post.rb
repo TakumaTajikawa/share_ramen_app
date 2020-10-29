@@ -12,6 +12,7 @@ class Post < ApplicationRecord
   validates :impression, presence: true, length: { maximum: 110 }
   validates :image, presence: { message: 'をアップロードしてください' }
   mount_uploader :image, ImageUploader
+  include JpPrefecture
 
   enum prefecture: {
     北海道: 1, 青森県: 2, 岩手県: 3, 宮城県: 4, 秋田県: 5, 山形県: 6,
