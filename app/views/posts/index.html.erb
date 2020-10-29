@@ -59,26 +59,44 @@
               <%= post.prefecture %>
             </div>
           <% end %>
-          <% if user_signed_in? %>
             <div class="like-comment-container">
               <div id="likes_buttons_<%= post.id %>">
-                <% if post.liked_by?(current_user) %>
-                  <div class="likes">
-                    <div class="likes-upper">
-                      <%= link_to "/posts/#{post.id}/likes" do %>
-                        <i class="fas fa-heart"></i>
-                        <div class="likes-count">
-                          <%= post.likes.count %>
-                        </div>
-                      <% end %>
+                <% if user_signed_in? %>
+                  <% if post.liked_by?(current_user) %>
+                    <div class="likes">
+                      <div class="likes-upper">
+                        <%= link_to "/posts/#{post.id}/likes" do %>
+                          <i class="fas fa-heart"></i>
+                          <div class="likes-count">
+                            <%= post.likes.count %>
+                          </div>
+                        <% end %>
+                      </div>
+                      <div class="likes-lower">
+                        <%= link_to post_likes_path(post.id), method: :delete, remote: true do %>
+                          <i class="far fa-grin-hearts"></i>
+                          <p class="like like-on">食べたい！</p>
+                        <% end %>
+                      </div>
                     </div>
-                    <div class="likes-lower">
-                      <%= link_to post_likes_path(post.id), method: :delete, remote: true do %>
-                        <i class="far fa-grin-hearts"></i>
-                        <p class="like like-on">食べたい！</p>
-                      <% end %>
+                  <% else %>
+                    <div class="likes">
+                      <div class="likes-upper">
+                        <%= link_to "/posts/#{post.id}/likes" do %>
+                          <i class="fas fa-heart"></i>
+                          <div class="likes-count">
+                            <%= post.likes.count %>
+                          </div>
+                        <% end %>
+                      </div>
+                      <div class="likes-lower">
+                        <%= link_to post_likes_path(post.id), method: :post, remote: true do %>
+                          <i class="far fa-meh"></i>
+                          <p class="like like-off">食べたい！</p>
+                        <% end %>
+                      </div>
                     </div>
-                  </div>
+                  <% end %>
                 <% else %>
                   <div class="likes">
                     <div class="likes-upper">
@@ -90,7 +108,7 @@
                       <% end %>
                     </div>
                     <div class="likes-lower">
-                      <%= link_to post_likes_path(post.id), method: :post, remote: true do %>
+                      <%= link_to post_likes_path(post.id), method: :post do %>
                         <i class="far fa-meh"></i>
                         <p class="like like-off">食べたい！</p>
                       <% end %>
@@ -100,7 +118,6 @@
               </div>
               <p class="post-index-comment-count"><%= "コメント#{post.comment.count}件" %></p>
             </div>
-          <% end %>
         </div>
       <% end %>
     </div>
