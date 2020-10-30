@@ -21,6 +21,8 @@ gem 'ransack'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'rack-mini-profiler', require: false
 gem 'jp_prefecture'
+gem 'fog-aws'
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
