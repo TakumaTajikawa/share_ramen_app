@@ -22,6 +22,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'rack-mini-profiler', require: false
 gem 'jp_prefecture'
 gem 'fog-aws'
+gem 'dotenv-rails'
 
 
 group :development, :test do
