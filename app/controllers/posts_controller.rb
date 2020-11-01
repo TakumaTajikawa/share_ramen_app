@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true).page(params[:page]).per(15)
+    @posts = @q.result(distinct: true).includes(:user).page(params[:page]).per(15)
   end
 
   def new
@@ -27,7 +27,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = @post.user
     @comment = Comment.new
-    @comments = @post.comment.all
+    @comments = @post.comment.all.includes(:user)
   end
 
   def edit
@@ -55,7 +55,7 @@ class PostsController < ApplicationController
 
   def likes
     @post = Post.find_by(id: params[:id])
-    @likes = Like.where(post_id: @post.id)
+    @likes = Like.where(post_id: @post.id).includes(:user)
   end
 
   private
