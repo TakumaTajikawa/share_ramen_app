@@ -32,7 +32,7 @@ https://www.share-ramen-app.com
 ### データベース
 - MySQL 8.0.21  
 ### 本番環境
-- AWS(EC2、VPC、RDS for MySQL、Route53、ACM)  
+- AWS(EC2、VPC、S3、RDS for MySQL、Route53、ACM)  
 - Nginx 
 - Unicorn  
 ### その他
