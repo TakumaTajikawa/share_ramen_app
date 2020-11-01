@@ -8,6 +8,10 @@
 @import "layouts/footer";
 @import "devise";
 @import "users";
+@import "posts";
+@import "relationships";
+@import "notifications";
+
 
 
 
@@ -55,8 +59,6 @@ main {
   background-color: #b49c9c;
   border-color: #d38c8c;
 }
-
-
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;

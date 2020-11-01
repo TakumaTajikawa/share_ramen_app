@@ -32,7 +32,7 @@ https://www.share-ramen-app.com
 ### データベース
 - MySQL 8.0.21  
 ### 本番環境
-- AWS(EC2、VPC、RDS for MySQL、Route53、ACM)  
+- AWS(EC2、VPC、S3、RDS for MySQL、Route53、ACM)  
 - Nginx 
 - Unicorn  
 ### その他
@@ -82,6 +82,18 @@ https://www.share-ramen-app.com
   + 投稿一覧ページ 
   + 通知一覧ページ
 
+
+# 工夫した点
+- 直感的に操作しやすいUI/UXを意識した
+- 「いいね！」ではなく「食べたい！」とし、オリジナリティを出した
+- ロゴにも拘りオリジナリティを出した
+
+
+# 躓いて克服した点
+- AWSへのデプロイ  
+  + 知識0の状態から取り掛かったため、かなり苦労したが、書籍での学習と並行しながら進めていくことで少しずつ知識が深まり、なんとかデプロイに成功した
+- 非同期処理  
+  + Rails6の非同期処理の情報が少なく実装に苦労したが、自分で考え試行錯誤し実装に成功した
 
 # AWS構成図
 ![FB8BF1BD-874D-4194-AC0F-528BB56C02BE](https://user-images.githubusercontent.com/63524359/95812668-e2e2ef00-0d50-11eb-954d-25d414e10b5f.jpeg)
