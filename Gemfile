@@ -45,4 +45,8 @@ group :development do
   gem 'bullet'
 end
 
+group :production, :staging do
+  gem 'unicorn'
+end
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
