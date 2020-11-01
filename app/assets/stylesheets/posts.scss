@@ -100,7 +100,7 @@
 .search-container {
   display: block !important;
   margin: 0 auto !important;
-  width: 870px !important;
+  width: 870px;
   border: 1px solid black;
   box-shadow: 0 0 12px black !important;
   background-color: #fff;
@@ -558,6 +558,7 @@
           font-size: 14px;
           background-color: #eff2f5;
           padding: 5px 9px 4px 9px;
+          margin-bottom: 30px;
           border-radius: 12px;
           margin-left: 5px;
           > a:hover {
@@ -576,7 +577,6 @@
     }
     .comment-destroy {
       padding-left: 38px;
-      margin-bottom: 30px;
       padding-top: 3px;
 
       .fa-trash {
@@ -662,7 +662,8 @@
   // posts/index
   .search-container {
     border-radius: 5px !important;
-    margin: 20px auto 10px auto!important;
+    margin: 20px auto 10px auto !important;
+    width: 375px;
   }
   .posts-blank-message {
     padding: 65px 0;
