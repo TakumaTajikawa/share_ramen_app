@@ -558,7 +558,6 @@
           font-size: 14px;
           background-color: #eff2f5;
           padding: 5px 9px 4px 9px;
-          margin-bottom: 30px;
           border-radius: 12px;
           margin-left: 5px;
           > a:hover {
@@ -578,6 +577,7 @@
     .comment-destroy {
       padding-left: 38px;
       padding-top: 3px;
+      margin-bottom: 30px;
 
       .fa-trash {
         color: #8e8e8e;
