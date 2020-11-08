@@ -16,6 +16,7 @@ default: &default
   username: root
   password: Tgkwtkm_0
   socket: /tmp/mysql.sock
+  host: db
 
 development:
   <<: *default

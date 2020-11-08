@@ -1,22 +1,24 @@
 version: '3'
 services:
   db:
-    image: postgres
+    image: mysql:8.0.21 #既存アプリとあわせる。ターミナルに「mysqladmin version」で確認
+    environment:
+      MYSQL_ROOT_PASSWORD: Tgkwtkm_0
+      MYSQL_DATABASE: root
+    ports:
+      - "4306:3306"  #Sequel ProでDBを確認する為、4306としておく
     volumes:
-      - ./tmp/db:/var/lib/postgresql/data
+      - ./mysql-confd:/etc/mysql/conf.d
   web:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/share_ramen_app
     ports:
-      - "3000:3000"
+      - 3000:3000
     depends_on:
       - db
-      - chrome
-    stdin_open: true
     tty: true
-  chrome:
-    image: selenium/standalone-chrome:3.141.59-dubnium
-    ports:
-      - 4444:4444
+    stdin_open: true
+volumes:
+  mysql-data:
