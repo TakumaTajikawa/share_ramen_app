@@ -2,10 +2,9 @@ version: '3'
 services:
   db:
     image: mysql:8.0.21
-    command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: Tgkwtkm_0
-      MYSQL_DATABASE: root
+      MYSQL_DATABASE: share_ramen_app_development
     ports:
       - "4306:3306"
     volumes:
