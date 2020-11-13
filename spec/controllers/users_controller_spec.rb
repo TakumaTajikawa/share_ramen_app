@@ -68,14 +68,14 @@ RSpec.describe UsersController, type: :controller do
     context "ログインしていないユーザーがユーザー詳細ページにアクセスするとして" do
       let(:user) { FactoryBot.create(:user) }
 
-      it "302のレスポンスを返すこと" do
+      it "正常にレスポンスを返すこと" do
         get :show, params: { id: user.id }
-        expect(response).to have_http_status "302"
+        expect(response).to  be_successful
       end
 
-      it "ログインページにリダイレクトすること" do
+      it "200のレスポンスを返すこと" do
         get :show, params: { id: user.id }
-        expect(response).to redirect_to new_user_session_path
+        expect(response).to have_http_status "200"
       end
     end
   end

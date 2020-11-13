@@ -12,10 +12,12 @@
     <% else %>
       <%= image_tag "default.jpg", alt: "user-icon", size: "200", class: "user-icon" %>
     <% end %>
-    <% if current_user != @user %>
-      <div class="user-name user-name-and-follow-tag">
-        <%= render "follow_form" %>
-      </div>
+    <% if user_signed_in? %>
+      <% if current_user != @user %>
+        <div class="user-name user-name-and-follow-tag">
+          <%= render "follow_form" %>
+        </div>
+      <% end %>
     <% end %>
     <div id="relationship">
       <%= render "relationship" %>
