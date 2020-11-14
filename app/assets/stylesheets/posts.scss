@@ -95,6 +95,15 @@
   font-weight: bold;
 }
 
+.btn-primary {
+  background-color: #831519;
+  color: #fff;
+  border: none;
+  &:hover {
+    background-color: #630e11;
+  }
+}
+
 // posts/index
 
 .search-container {
