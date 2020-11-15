@@ -1,7 +1,7 @@
 /*
  *= require_tree .
  *= require_self
- */
+*/
 
 @import "bootstrap/scss/bootstrap";
 @import "layouts/navbar";
@@ -11,8 +11,6 @@
 @import "posts";
 @import "relationships";
 @import "notifications";
-
-
 
 
 @mixin box_sizing {
