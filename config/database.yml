@@ -50,6 +50,7 @@ test:
 #
 production:
   <<: *default
-  database: share_ramen_app_production
-  username: share_ramen_app
-  password: <%= ENV['SHARE_RAMEN_APP_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOSTNAME'] %>
