@@ -9,7 +9,7 @@ RSpec.feature "Posts", type: :feature do
     fill_in "パスワード", with: user.password
     click_button "ログイン"
 
-    expect {
+    expect {sr_.
       click_link "投稿を作成"
       fill_in "store", with: "大勝軒"
       select "東京都", from: "都道府県"
