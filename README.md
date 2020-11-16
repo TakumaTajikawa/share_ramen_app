@@ -39,8 +39,9 @@ https://www.share-ramen-app.com
 - Nginx 
 - Unicorn  
 ### その他
-- RSpec(単体・結合テスト) 
+- RSpec(単体・結合テスト) (109exmples)
 - Rubocop-airbnb(リンター)  
+- CircleCIを用いて自動ビルド・自動テスト環境の構築
 - AWS・ACMにてSSL証明書を発行しSSL化   
 
 
@@ -100,7 +101,8 @@ https://www.share-ramen-app.com
   **→Qiitaに[記事を投稿](https://qiita.com/takuma_0625/items/2a25dce50ad309993fa3)し、アプトプットしました。**
 
 # AWS構成図
-![20FCD34E-DD30-4BBD-9C2A-FCF1CC4C91A5](https://user-images.githubusercontent.com/63524359/98490334-8c47d280-2274-11eb-813e-b1eab5d44ac6.jpeg)
+![2361849D-6F2D-4B96-8216-2A32E652E4BA](https://user-images.githubusercontent.com/63524359/99212611-d568cb00-280e-11eb-88c9-4dfd3f4ad8a2.jpeg)
+
 
 
 
