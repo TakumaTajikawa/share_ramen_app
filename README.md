@@ -25,7 +25,7 @@ https://www.share-ramen-app.com
 - HTML 
 - Sass  
 - JavaScript
-- JQuery
+- jQuery
 - Bootstrap  
 ### バックエンド
 - Ruby 2.6.5 
